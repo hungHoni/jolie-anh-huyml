@@ -1,0 +1,2923 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <title>Jolie Anh — Retoucher &amp; Graphic Designer</title>
+  <meta name="description" content="Jolie Anh is a Retoucher &amp; Graphic Designer based in Ho Chi Minh City, Vietnam, crafting high-fashion beauty retouching, resort lookbooks, and expressive brand identities." />
+  <meta property="og:title" content="Jolie Anh — Retoucher &amp; Graphic Designer" />
+  <meta property="og:description" content="Portfolio of Jolie Anh — High-End Beauty Retouching, Fashion Lookbooks, and Brand Design." />
+  <meta property="og:image" content="assets/jolie-avatar.jpg" />
+  <link rel="icon" type="image/jpeg" href="assets/jolie-avatar.jpg" />
+
+  <style>
+    /* ===================== EXACT HUYML.CO CUSTOM FONTS ===================== */
+    @font-face {
+      font-family: "BT Glyphius";
+      src: url("https://framerusercontent.com/assets/xirQ3g4Sv5q7MG0KvL1PiOOLLBA.woff2") format("woff2");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "BT Glyphius";
+      src: url("https://framerusercontent.com/assets/dcnL9H2gaFN69F1nc6gCkZt2CQ.woff2") format("woff2");
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "BT Grotesk";
+      src: url("https://framerusercontent.com/assets/oDqinH2S9k4fMbGueYwREUmNFM.woff2") format("woff2");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "BT Grotesk";
+      src: url("https://framerusercontent.com/assets/pczyWZYmicHp9LhGgMJo7tnDcHo.woff2") format("woff2");
+      font-weight: 500;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "BT Grotesk";
+      src: url("https://framerusercontent.com/assets/7wvwHnWrXSgYhuk2mEt4LrDGXo.woff2") format("woff2");
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "F37 Bolton";
+      src: url("https://framerusercontent.com/assets/NjDO01jId5REkpwNN1pD7i8fBLY.woff2") format("woff2");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "F37 Bolton";
+      src: url("https://framerusercontent.com/assets/OUUqRFRKQpMerpUcBlnnMAKbp0.woff2") format("woff2");
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    :root {
+      --bg-canvas: #ececec;
+      --ink: #111111;
+      --ink-soft: #222222;
+      --muted: #8a8a8a;
+      --muted-light: rgba(17, 17, 17, 0.36);
+      --accent-red: #f24e42;
+      --pure-white: #ffffff;
+      --card-dark: #141414;
+      --card-frosted: rgba(224, 224, 224, 0.9);
+      --border-hairline: rgba(17, 17, 17, 0.11);
+      --font-display: "BT Glyphius", Georgia, serif;
+      --font-sans: "BT Grotesk", -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+      --font-bolton: "F37 Bolton", "BT Grotesk", -apple-system, sans-serif;
+      --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+      --ease-ios-sheet: cubic-bezier(0.32, 0.72, 0, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    html, body {
+      width: 100%;
+      min-height: 100%;
+      background-color: var(--bg-canvas);
+      color: var(--ink);
+      font-family: var(--font-sans);
+      font-size: 13px;
+      line-height: 1.4;
+      overflow-x: hidden;
+      selection-background-color: var(--accent-red);
+    }
+
+    ::selection {
+      background: var(--accent-red);
+      color: #fff;
+    }
+
+    html.sheet-locked,
+    body.sheet-locked {
+      overflow: hidden !important;
+      overscroll-behavior: none;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font-family: inherit;
+      border: none;
+      background: none;
+      cursor: pointer;
+      color: inherit;
+    }
+
+    /* ===================== INTRO SPLASH CURTAIN (HUYML.CO RED WORDMARK REVEAL) ===================== */
+    .intro-splash {
+      position: fixed;
+      inset: 0;
+      background: var(--bg-canvas);
+      z-index: 2000;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      padding: 28px 32px;
+      pointer-events: none;
+      opacity: 1;
+      transition: opacity 0.65s var(--ease-out-expo), transform 0.65s var(--ease-out-expo);
+    }
+
+    .intro-splash.hidden {
+      opacity: 0;
+      transform: translate3d(0, -12px, 0);
+    }
+
+    .intro-wordmark {
+      font-family: var(--font-display);
+      font-size: clamp(54px, 11vw, 152px);
+      font-weight: 400;
+      line-height: 0.88;
+      letter-spacing: -0.02em;
+      color: var(--accent-red);
+      text-transform: uppercase;
+    }
+
+    .intro-counter {
+      font-family: var(--font-bolton);
+      font-size: clamp(20px, 3vw, 36px);
+      font-weight: 700;
+      color: var(--ink);
+      letter-spacing: -0.03em;
+    }
+
+    /* ===================== TOP 5-COLUMN HEADER BAR (HUYML.CO EXACT GRID) ===================== */
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 500;
+      padding: 20px 24px 12px;
+      display: grid;
+      grid-template-columns: 190px 1.25fr 0.9fr 1fr auto;
+      align-items: start;
+      gap: 20px;
+      pointer-events: none;
+    }
+
+    .site-header > * {
+      pointer-events: auto;
+    }
+
+    /* Col 1: Vertical Stamp Logo + Portrait Box */
+    .brand-stamp {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      cursor: pointer;
+      user-select: none;
+      width: fit-content;
+    }
+
+    .stamp-micro-top {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-bolton);
+      font-size: 7.5px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+      text-transform: lowercase;
+      line-height: 1;
+    }
+
+    .stamp-body {
+      display: flex;
+      align-items: stretch;
+      gap: 6px;
+    }
+
+    .stamp-vertical-name {
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+      font-family: var(--font-bolton);
+      font-weight: 700;
+      font-size: 27px;
+      line-height: 0.84;
+      letter-spacing: -0.04em;
+      color: var(--ink);
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
+
+    .stamp-vertical-name sup {
+      font-size: 11px;
+      margin-bottom: 2px;
+    }
+
+    .stamp-portrait-box {
+      width: 44px;
+      height: 68px;
+      background: #111;
+      overflow: hidden;
+      position: relative;
+      border: 1px solid rgba(17, 17, 17, 0.25);
+    }
+
+    .stamp-portrait-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: grayscale(100%) contrast(1.28);
+      transition: filter 0.35s ease, transform 0.35s ease;
+    }
+
+    .brand-stamp:hover .stamp-portrait-box img {
+      filter: grayscale(0%) contrast(1.06);
+      transform: scale(1.05);
+    }
+
+    /* Col 2: Menu Column */
+    .header-col-label {
+      font-family: var(--font-sans);
+      font-size: 11.5px;
+      font-weight: 400;
+      color: var(--muted);
+      margin-bottom: 6px;
+      letter-spacing: -0.01em;
+    }
+
+    .nav-menu-list {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1px;
+    }
+
+    .nav-item-btn {
+      font-family: var(--font-display);
+      font-size: 23px;
+      line-height: 1.06;
+      letter-spacing: -0.01em;
+      text-transform: uppercase;
+      color: var(--ink);
+      display: inline-flex;
+      align-items: center;
+      gap: 0;
+      padding: 1px 0;
+      transition: color 0.2s ease, transform 0.28s var(--ease-out-expo);
+    }
+
+    .nav-item-btn .nav-arrow {
+      display: inline-block;
+      width: 0;
+      opacity: 0;
+      overflow: hidden;
+      transform: translateX(-8px);
+      transition: width 0.28s var(--ease-out-expo), opacity 0.25s ease, transform 0.28s var(--ease-out-expo);
+      font-family: var(--font-sans);
+      font-size: 19px;
+      line-height: 1;
+    }
+
+    .nav-item-btn.active .nav-arrow,
+    .nav-item-btn:hover .nav-arrow {
+      width: 24px;
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .nav-item-btn:hover {
+      color: var(--accent-red);
+    }
+
+    .nav-item-btn.active {
+      color: var(--ink);
+    }
+
+    /* Col 3, 4, 5: Meta Columns */
+    .header-meta-value {
+      font-family: var(--font-sans);
+      font-size: 12.5px;
+      font-weight: 500;
+      color: var(--ink);
+      letter-spacing: -0.01em;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .header-meta-link {
+      font-family: var(--font-sans);
+      font-size: 12.5px;
+      font-weight: 500;
+      color: var(--ink);
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s ease, color 0.2s ease;
+    }
+
+    .header-meta-link:hover {
+      color: var(--accent-red);
+      border-color: var(--accent-red);
+    }
+
+    .header-col-right {
+      text-align: right;
+    }
+
+    .live-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent-red);
+      display: inline-block;
+    }
+
+    /* Mobile Header Bar (Hidden on Desktop) */
+    .mobile-topbar {
+      display: none;
+    }
+
+    /* ===================== MAIN VIEWS CONTAINER ===================== */
+    .view-section {
+      display: none !important;
+      width: 100%;
+      min-height: 100vh;
+      min-height: 100dvh;
+      position: relative;
+    }
+
+    .view-section.view-work.active {
+      display: block !important;
+    }
+
+    .view-section.view-about.active {
+      display: flex !important;
+    }
+
+    .view-section.view-playground.active {
+      display: grid !important;
+    }
+
+    /* ===================== VIEW 1: WORK (3D SKEWED VERTICAL WHEEL + METADATA) ===================== */
+    .view-work {
+      height: 100vh;
+      height: 100dvh;
+      overflow: hidden;
+      position: relative;
+      user-select: none;
+    }
+
+    /* Left Project Metadata Block */
+    .work-left-meta {
+      position: absolute;
+      left: 24px;
+      top: 50%;
+      transform: translateY(-38%);
+      z-index: 30;
+      width: 240px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      pointer-events: auto;
+    }
+
+    .meta-group {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .meta-label {
+      font-size: 11.5px;
+      color: var(--muted);
+    }
+
+    .meta-val {
+      font-size: 12.5px;
+      font-weight: 500;
+      color: var(--ink);
+      line-height: 1.35;
+    }
+
+    .work-open-pill {
+      margin-top: 4px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      width: fit-content;
+      font-size: 11.5px;
+      font-weight: 500;
+      color: var(--ink);
+      padding: 6px 12px;
+      border: 1px solid rgba(17, 17, 17, 0.2);
+      border-radius: 99px;
+      background: rgba(255, 255, 255, 0.45);
+      backdrop-filter: blur(8px);
+      transition: all 0.2s ease;
+    }
+
+    .work-open-pill:hover {
+      background: var(--ink);
+      color: #fff;
+      border-color: var(--ink);
+    }
+
+    /* Bottom-Left Giant Index Counter (01 / 08) */
+    .work-index-counter {
+      position: absolute;
+      left: 24px;
+      bottom: 22px;
+      z-index: 30;
+      display: flex;
+      align-items: flex-end;
+      gap: 8px;
+      font-family: var(--font-bolton);
+      color: var(--ink);
+      line-height: 0.85;
+    }
+
+    .counter-active {
+      font-size: clamp(68px, 8.8vw, 128px);
+      font-weight: 700;
+      letter-spacing: -0.05em;
+    }
+
+    .counter-slash {
+      font-size: clamp(64px, 8.2vw, 118px);
+      font-weight: 300;
+      color: rgba(17, 17, 17, 0.65);
+      margin: 0 2px;
+    }
+
+    .counter-total {
+      font-size: clamp(68px, 8.8vw, 128px);
+      font-weight: 700;
+      letter-spacing: -0.05em;
+    }
+
+    /* Center 3D Tilted Card Stack Stage */
+    .wheel-stage {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      perspective: 1600px;
+      z-index: 15;
+      cursor: grab;
+      touch-action: none;
+    }
+
+    .wheel-stage:active {
+      cursor: grabbing;
+    }
+
+    .wheel-stack {
+      position: relative;
+      width: 440px;
+      height: 300px;
+      transform-style: preserve-3d;
+    }
+
+    .wheel-card {
+      position: absolute;
+      inset: 0;
+      border-radius: 3px;
+      overflow: hidden;
+      background: #1a1a1a;
+      box-shadow: 0 26px 60px rgba(0, 0, 0, 0.22), 0 4px 14px rgba(0, 0, 0, 0.12);
+      cursor: pointer;
+      will-change: transform, opacity, filter;
+      transition: box-shadow 0.3s ease;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+    }
+
+    .wheel-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      pointer-events: none;
+      transform: scale(1.02);
+      transition: transform 0.45s var(--ease-out-expo);
+    }
+
+    .wheel-card.is-active {
+      box-shadow: 0 34px 78px rgba(0, 0, 0, 0.32), 0 0 0 1px rgba(242, 78, 66, 0.35);
+    }
+
+    .wheel-card.is-active:hover img {
+      transform: scale(1.06);
+    }
+
+    .wheel-card-badge {
+      position: absolute;
+      left: 14px;
+      bottom: 12px;
+      padding: 4px 10px;
+      background: rgba(17, 17, 17, 0.76);
+      backdrop-filter: blur(8px);
+      color: #fff;
+      font-size: 10.5px;
+      font-weight: 500;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      border-radius: 2px;
+      opacity: 0;
+      transform: translateY(4px);
+      transition: opacity 0.25s ease, transform 0.25s ease;
+    }
+
+    .wheel-card.is-active .wheel-card-badge {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Right Project Wheel List + 3 Color Swatches */
+    .wheel-right-rail {
+      position: absolute;
+      right: 24px;
+      top: 50%;
+      transform: translateY(-44%);
+      z-index: 30;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .wheel-list {
+      position: relative;
+      height: 380px;
+      width: 250px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .wheel-list-item {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      text-align: right;
+      font-family: var(--font-sans);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+      text-transform: uppercase;
+      color: var(--ink);
+      white-space: nowrap;
+      cursor: pointer;
+      transition: color 0.2s ease;
+      will-change: transform, opacity;
+      padding: 4px 0;
+    }
+
+    .wheel-list-item.is-active {
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    .wheel-list-item:hover {
+      color: var(--accent-red);
+    }
+
+    .wheel-swatches {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      padding: 3px;
+      background: rgba(255, 255, 255, 0.55);
+      border-radius: 2px;
+      border: 1px solid rgba(17, 17, 17, 0.08);
+    }
+
+    .swatch-box {
+      width: 11px;
+      height: 11px;
+      border-radius: 1px;
+      transition: background-color 0.35s ease;
+    }
+
+    /* Bottom-Right '26 Lookbook Trigger */
+    .work-bottom-right {
+      position: absolute;
+      right: 24px;
+      bottom: 22px;
+      z-index: 30;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .scroll-hint-tag {
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .reel-trigger-btn {
+      font-family: var(--font-sans);
+      font-size: 12.5px;
+      font-weight: 500;
+      color: var(--ink);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 0;
+      transition: color 0.2s ease;
+    }
+
+    .reel-trigger-btn:hover {
+      color: var(--accent-red);
+    }
+
+    /* ===================== VIEW 2: ABOUT (19 / 99 WATERMARK + CORAL RED MANIFESTOS + 4-COL GRID) ===================== */
+    .view-about {
+      padding: 138px 24px 42px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Giant White Background Numbers 19 and 99 */
+    .about-watermark-layer {
+      position: absolute;
+      top: 115px;
+      left: 12px;
+      right: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      pointer-events: none;
+      z-index: 1;
+      user-select: none;
+    }
+
+    .watermark-num {
+      font-family: var(--font-bolton);
+      font-weight: 700;
+      font-size: clamp(140px, 24vw, 355px);
+      line-height: 0.78;
+      letter-spacing: -0.06em;
+      color: var(--pure-white);
+    }
+
+    .about-upper-grid {
+      position: relative;
+      z-index: 5;
+      display: grid;
+      grid-template-columns: 190px 250px 1fr;
+      gap: 28px;
+      align-items: start;
+      margin-bottom: 54px;
+    }
+
+    .about-spacer-col {
+      min-height: 1px;
+    }
+
+    /* Center Portrait Card + Badge Switcher + Process Link */
+    .about-portrait-col {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .about-main-photo {
+      width: 215px;
+      height: 280px;
+      background: #1a1a1a;
+      overflow: hidden;
+      border-radius: 2px;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+    }
+
+    .about-main-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: filter 0.35s ease, transform 0.45s ease;
+    }
+
+    .about-main-photo.duotone-mode img {
+      filter: grayscale(100%) contrast(1.35) sepia(25%) hue-rotate(-18deg);
+    }
+
+    .about-thumb-toggles {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .about-mini-thumb {
+      width: 28px;
+      height: 28px;
+      border-radius: 2px;
+      overflow: hidden;
+      border: 1.5px solid transparent;
+      opacity: 0.55;
+      transition: all 0.2s ease;
+      padding: 0;
+    }
+
+    .about-mini-thumb.active,
+    .about-mini-thumb:hover {
+      opacity: 1;
+      border-color: var(--ink);
+    }
+
+    .about-mini-thumb img,
+    .about-mini-thumb svg {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .process-trigger-link {
+      margin-top: 8px;
+      font-family: var(--font-sans);
+      font-size: 12.5px;
+      font-weight: 500;
+      color: var(--ink);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      transition: color 0.2s ease;
+    }
+
+    .process-trigger-link:hover {
+      color: var(--accent-red);
+    }
+
+    /* Right Coral-Red Uppercase Manifestos */
+    .about-manifesto-col {
+      display: flex;
+      flex-direction: column;
+      gap: 36px;
+      max-width: 780px;
+      justify-self: end;
+    }
+
+    .manifesto-block {
+      display: grid;
+      grid-template-columns: 95px 1fr;
+      gap: 18px;
+      align-items: start;
+    }
+
+    .manifesto-tag {
+      font-family: var(--font-sans);
+      font-size: 11.5px;
+      color: var(--muted);
+      padding-top: 4px;
+    }
+
+    .manifesto-Copy {
+      font-family: var(--font-display);
+      font-size: clamp(16px, 1.52vw, 22px);
+      line-height: 1.18;
+      letter-spacing: -0.01em;
+      text-transform: uppercase;
+      color: var(--accent-red);
+    }
+
+    /* Bottom 4-Column Editorial Grid */
+    .about-bottom-grid {
+      position: relative;
+      z-index: 5;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 28px;
+      padding-top: 26px;
+      border-top: 1px solid var(--border-hairline);
+    }
+
+    .about-col-title {
+      font-size: 11.5px;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+
+    .about-stat-Split {
+      display: grid;
+      grid-template-columns: 64px 1fr;
+      gap: 12px;
+      align-items: start;
+    }
+
+    .about-stat-num {
+      font-family: var(--font-bolton);
+      font-size: 28px;
+      font-weight: 700;
+      line-height: 0.95;
+      letter-spacing: -0.04em;
+      color: var(--ink);
+    }
+
+    .about-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--ink);
+    }
+
+    .about-list li button {
+      font-size: 12px;
+      font-weight: 500;
+      text-align: left;
+      color: var(--ink);
+      transition: color 0.18s ease;
+    }
+
+    .about-list li button:hover {
+      color: var(--accent-red);
+    }
+
+    /* ===================== APPROACH & PROCESS TILTED FROSTED MODAL ===================== */
+    .process-modal-backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 900;
+      background: rgba(17, 17, 17, 0.18);
+      backdrop-filter: blur(4px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.32s var(--ease-ios-sheet);
+    }
+
+    .process-modal-backdrop.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .process-sheet {
+      width: 100%;
+      max-width: 560px;
+      max-height: 86vh;
+      overflow-y: auto;
+      background: rgba(223, 223, 223, 0.92);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border: 1px solid rgba(17, 17, 17, 0.12);
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.22);
+      padding: 26px 28px 32px;
+      transform: translate3d(0, 24px, 0) rotate(-1.4deg) scale(0.96);
+      transition: transform 0.38s var(--ease-ios-sheet);
+    }
+
+    .process-modal-backdrop.open .process-sheet {
+      transform: translate3d(0, 0, 0) rotate(-1.4deg) scale(1);
+    }
+
+    .process-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 24px;
+    }
+
+    .process-title {
+      font-family: var(--font-display);
+      font-size: 28px;
+      font-weight: 400;
+      letter-spacing: -0.01em;
+      text-transform: uppercase;
+      color: var(--ink);
+      line-height: 1;
+    }
+
+    .process-close-btn {
+      font-size: 12.5px;
+      font-weight: 500;
+      color: var(--ink);
+      padding: 2px 6px;
+    }
+
+    .process-close-btn:hover {
+      color: var(--accent-red);
+    }
+
+    .process-row {
+      display: grid;
+      grid-template-columns: 44px 140px 1fr;
+      gap: 14px;
+      padding: 12px 0;
+      border-top: 1px solid rgba(17, 17, 17, 0.1);
+      font-size: 11.5px;
+      line-height: 1.45;
+    }
+
+    .process-code {
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    .process-step-name {
+      font-weight: 500;
+      color: var(--muted);
+    }
+
+    .process-desc {
+      color: var(--ink);
+    }
+
+    /* ===================== VIEW 3: PLAYGROUND (24 WATERMARK + 4-COLUMN ARCHIVE GRID) ===================== */
+    .view-playground {
+      padding: 138px 24px 64px;
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 300px 1fr;
+      gap: 32px;
+      align-items: start;
+    }
+
+    .playground-left-sticky {
+      position: sticky;
+      top: 138px;
+      height: calc(100vh - 175px);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .playground-watermark {
+      font-family: var(--font-bolton);
+      font-weight: 700;
+      font-size: clamp(130px, 19vw, 260px);
+      line-height: 0.8;
+      letter-spacing: -0.06em;
+      color: var(--pure-white);
+      user-select: none;
+    }
+
+    .playground-info-box {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      max-width: 260px;
+    }
+
+    .playground-desc {
+      font-size: 12.5px;
+      font-weight: 500;
+      line-height: 1.45;
+      color: var(--ink);
+    }
+
+    .playground-filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .pg-filter-btn {
+      font-size: 11px;
+      font-weight: 500;
+      padding: 4px 10px;
+      border-radius: 2px;
+      border: 1px solid rgba(17, 17, 17, 0.15);
+      color: var(--ink);
+      background: transparent;
+      transition: all 0.18s ease;
+    }
+
+    .pg-filter-btn.active,
+    .pg-filter-btn:hover {
+      background: var(--ink);
+      color: #fff;
+      border-color: var(--ink);
+    }
+
+    .playground-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .pg-card {
+      background: #dcdcdc;
+      border-radius: 2px;
+      overflow: hidden;
+      cursor: pointer;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      border: 1px solid rgba(17, 17, 17, 0.07);
+      transition: transform 0.28s var(--ease-out-expo), box-shadow 0.28s ease;
+    }
+
+    .pg-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 34px rgba(0, 0, 0, 0.12);
+    }
+
+    .pg-card-media {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      overflow: hidden;
+      background: #181818;
+      position: relative;
+    }
+
+    .pg-card:nth-child(3n) .pg-card-media {
+      aspect-ratio: 1 / 1;
+    }
+
+    .pg-card:nth-child(5n) .pg-card-media {
+      aspect-ratio: 16 / 11;
+    }
+
+    .pg-card-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.45s var(--ease-out-expo);
+    }
+
+    .pg-card:hover .pg-card-media img {
+      transform: scale(1.05);
+    }
+
+    .pg-card-meta {
+      padding: 8px 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+      background: rgba(236, 236, 236, 0.92);
+      font-size: 11px;
+    }
+
+    .pg-card-title {
+      font-weight: 500;
+      color: var(--ink);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .pg-card-idx {
+      font-family: var(--font-bolton);
+      font-weight: 700;
+      color: var(--muted);
+      font-size: 10px;
+    }
+
+    /* ===================== OVERLAY 4: CONTACT (TWO FLOATING TILTED CARDS) ===================== */
+    .contact-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 850;
+      background: rgba(17, 17, 17, 0.14);
+      backdrop-filter: blur(3px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.32s var(--ease-ios-sheet);
+    }
+
+    .contact-overlay.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .contact-cards-pair {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+      position: relative;
+      max-width: 780px;
+      width: 100%;
+    }
+
+    .contact-card-dark {
+      width: 360px;
+      min-height: 410px;
+      background: var(--card-dark);
+      color: #f4f4f4;
+      padding: 24px 26px;
+      border-radius: 2px;
+      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.35);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transform: translate3d(14px, -10px, 0) rotate(-4.2deg) scale(0.95);
+      transition: transform 0.4s var(--ease-ios-sheet);
+      z-index: 2;
+    }
+
+    .contact-overlay.open .contact-card-dark {
+      transform: translate3d(14px, -10px, 0) rotate(-4.2deg) scale(1);
+    }
+
+    .contact-card-light {
+      width: 350px;
+      min-height: 400px;
+      background: #dedede;
+      color: var(--ink);
+      padding: 24px 26px;
+      border-radius: 2px;
+      border: 1px solid rgba(17, 17, 17, 0.12);
+      box-shadow: 0 26px 60px rgba(0, 0, 0, 0.18);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transform: translate3d(-12px, 18px, 0) rotate(2.6deg) scale(0.95);
+      transition: transform 0.42s var(--ease-ios-sheet);
+      z-index: 1;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact-overlay.open .contact-card-light {
+      transform: translate3d(-12px, 18px, 0) rotate(2.6deg) scale(1);
+    }
+
+    .contact-card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .contact-card-heading {
+      font-family: var(--font-display);
+      font-size: 27px;
+      font-weight: 400;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    .contact-close-link {
+      font-size: 12px;
+      font-weight: 500;
+      opacity: 0.85;
+      transition: opacity 0.2s ease, color 0.2s ease;
+    }
+
+    .contact-close-link:hover {
+      opacity: 1;
+      color: var(--accent-red);
+    }
+
+    .contact-links-block {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      font-size: 12px;
+    }
+
+    .contact-sub-label {
+      color: #888;
+      margin-bottom: 6px;
+      font-size: 11px;
+    }
+
+    .contact-link-list {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .contact-link-list a,
+    .contact-link-list button {
+      text-align: left;
+      font-size: 12px;
+      font-weight: 500;
+      color: inherit;
+      transition: color 0.18s ease;
+    }
+
+    .contact-link-list a:hover,
+    .contact-link-list button:hover {
+      color: var(--accent-red);
+    }
+
+    .credits-meta-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      font-size: 12px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .credits-line-art {
+      position: absolute;
+      right: -10px;
+      bottom: -14px;
+      width: 190px;
+      height: 190px;
+      opacity: 0.22;
+      pointer-events: none;
+    }
+
+    /* ===================== PROJECT DETAIL SHEET / VIEW (HUYML.CO/PROJECT/... + IPHONE SWIPE DOWN) ===================== */
+    .project-sheet-backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 1100;
+      background: rgba(17, 17, 17, 0.42);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      opacity: 0;
+      pointer-events: none;
+      overscroll-behavior: none;
+      touch-action: none;
+      will-change: opacity;
+      transition: opacity 0.38s var(--ease-ios-sheet);
+    }
+
+    .project-sheet-backdrop.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .project-sheet {
+      position: absolute;
+      inset: 0;
+      background: var(--bg-canvas);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      transform: translate3d(0, 100%, 0);
+      transition: transform 0.44s var(--ease-ios-sheet);
+      will-change: transform;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+    }
+
+    .project-sheet-backdrop.open .project-sheet {
+      transform: translate3d(0, 0, 0);
+    }
+
+    .project-sheet.dragging {
+      transition: none !important;
+      user-select: none;
+    }
+
+    /* Top Drag & Navigation Bar inside Project Sheet */
+    .sheet-topbar {
+      flex-shrink: 0;
+      padding: 10px 24px 12px;
+      background: rgba(236, 236, 236, 0.94);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-hairline);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      z-index: 40;
+      touch-action: none;
+      cursor: grab;
+    }
+
+    .sheet-drag-handle {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 3px;
+      width: 100%;
+      padding: 2px 0;
+    }
+
+    .sheet-drag-pill {
+      width: 44px;
+      height: 4.5px;
+      border-radius: 99px;
+      background: rgba(17, 17, 17, 0.25);
+    }
+
+    .sheet-drag-hint {
+      font-size: 9.5px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--muted);
+    }
+
+    .sheet-topbar-row {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .sheet-back-btn {
+      font-family: var(--font-display);
+      font-size: 20px;
+      text-transform: uppercase;
+      color: var(--ink);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: color 0.2s ease;
+    }
+
+    .sheet-back-btn:hover {
+      color: var(--accent-red);
+    }
+
+    .sheet-top-actions {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .grade-compare-btn {
+      font-size: 11.5px;
+      font-weight: 500;
+      padding: 5px 12px;
+      border-radius: 99px;
+      border: 1px solid rgba(17, 17, 17, 0.2);
+      background: rgba(255, 255, 255, 0.65);
+      color: var(--ink);
+      transition: all 0.2s ease;
+    }
+
+    .grade-compare-btn.active,
+    .grade-compare-btn:hover {
+      background: var(--accent-red);
+      color: #fff;
+      border-color: var(--accent-red);
+    }
+
+    .sheet-close-btn {
+      font-size: 12.5px;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 2px;
+      background: var(--ink);
+      color: #fff;
+    }
+
+    /* 3-Column huyml.co Project Detail Body */
+    .sheet-body {
+      flex: 1;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      overscroll-behavior: contain;
+      display: grid;
+      grid-template-columns: 270px 1fr 90px;
+      gap: 24px;
+      padding: 28px 24px 96px;
+      position: relative;
+    }
+
+    .sheet-left-info {
+      position: sticky;
+      top: 12px;
+      align-self: start;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      padding-right: 12px;
+    }
+
+    .sheet-story-text {
+      font-size: 12.5px;
+      font-weight: 500;
+      line-height: 1.5;
+      color: var(--ink);
+    }
+
+    .sheet-behance-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--accent-red);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .sheet-frames-col {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+      max-width: 820px;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    .sheet-frame-card {
+      background: #e2e2e2;
+      padding: 18px;
+      border-radius: 2px;
+      border: 1px solid rgba(17, 17, 17, 0.08);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .sheet-frame-card img {
+      width: 100%;
+      height: auto;
+      max-height: 82vh;
+      object-fit: contain;
+      display: block;
+      background: #141414;
+      transition: filter 0.35s ease;
+    }
+
+    .sheet-frames-col.raw-mode .sheet-frame-card img {
+      filter: saturate(0.68) contrast(0.88) brightness(0.97);
+    }
+
+    .sheet-frame-caption {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 11px;
+      color: var(--muted);
+      font-family: var(--font-sans);
+    }
+
+    .sheet-next-project-bar {
+      margin-top: 16px;
+      padding: 20px;
+      background: #e2e2e2;
+      border: 1px solid rgba(17, 17, 17, 0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .sheet-next-btn {
+      font-family: var(--font-display);
+      font-size: 22px;
+      color: var(--ink);
+      text-transform: uppercase;
+      transition: color 0.2s ease;
+    }
+
+    .sheet-next-btn:hover {
+      color: var(--accent-red);
+    }
+
+    /* Right Mini-Thumbnail Strip + Giant Coral-Red Bottom Title */
+    .sheet-right-rail {
+      position: sticky;
+      top: 12px;
+      align-self: start;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 8px;
+      z-index: 25;
+    }
+
+    .sheet-thumb-btn {
+      width: 54px;
+      height: 38px;
+      border-radius: 2px;
+      overflow: hidden;
+      border: 1.5px solid transparent;
+      opacity: 0.45;
+      transition: all 0.2s ease;
+      padding: 0;
+    }
+
+    .sheet-thumb-btn.active,
+    .sheet-thumb-btn:hover {
+      opacity: 1;
+      border-color: var(--accent-red);
+      transform: translateX(-3px);
+    }
+
+    .sheet-thumb-btn img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .sheet-giant-title {
+      position: fixed;
+      right: 24px;
+      bottom: 18px;
+      z-index: 35;
+      font-family: var(--font-display);
+      font-size: clamp(34px, 5.2vw, 76px);
+      font-weight: 400;
+      line-height: 0.9;
+      letter-spacing: -0.02em;
+      color: var(--accent-red);
+      text-transform: uppercase;
+      text-align: right;
+      pointer-events: none;
+      max-width: 52vw;
+    }
+
+    /* ===================== RESPONSIVE MOBILE / IPHONE LAYOUT (<= 860PX) ===================== */
+    @media (max-width: 860px) {
+      .site-header {
+        display: none;
+      }
+
+      .mobile-topbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 600;
+        padding: 14px 18px 10px;
+        background: rgba(236, 236, 236, 0.88);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        border-bottom: 1px solid rgba(17, 17, 17, 0.08);
+      }
+
+      .mobile-topbar-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .mobile-menu-lines {
+        width: 28px;
+        height: 24px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 5px;
+      }
+
+      .mobile-menu-lines span {
+        display: block;
+        width: 20px;
+        height: 1.8px;
+        background: var(--ink);
+      }
+
+      .mobile-brand-center {
+        font-family: var(--font-bolton);
+        font-size: 20px;
+        font-weight: 700;
+        letter-spacing: -0.04em;
+        color: var(--ink);
+        text-transform: uppercase;
+      }
+
+      .mobile-inquiries-btn {
+        font-size: 11px;
+        font-weight: 600;
+        color: var(--accent-red);
+        text-transform: uppercase;
+      }
+
+      .mobile-nav-pills {
+        display: flex;
+        gap: 6px;
+        overflow-x: auto;
+        padding-bottom: 2px;
+      }
+
+      .mobile-nav-pill {
+        font-family: var(--font-display);
+        font-size: 15px;
+        text-transform: uppercase;
+        padding: 4px 11px;
+        border-radius: 99px;
+        border: 1px solid rgba(17, 17, 17, 0.14);
+        color: var(--ink);
+        white-space: nowrap;
+      }
+
+      .mobile-nav-pill.active {
+        background: var(--ink);
+        color: #fff;
+        border-color: var(--ink);
+      }
+
+      /* Mobile Work View */
+      .wheel-stack {
+        width: 285px;
+        height: 200px;
+      }
+
+      .work-left-meta {
+        left: 18px;
+        top: auto;
+        bottom: 92px;
+        transform: none;
+        width: calc(100% - 36px);
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 10px;
+        background: rgba(236, 236, 236, 0.86);
+        backdrop-filter: blur(8px);
+        padding: 10px 12px;
+        border-radius: 4px;
+        border: 1px solid rgba(17, 17, 17, 0.08);
+      }
+
+      .wheel-right-rail {
+        right: 14px;
+        top: 108px;
+        transform: none;
+      }
+
+      .wheel-list {
+        display: none;
+      }
+
+      .work-index-counter {
+        left: 18px;
+        bottom: 18px;
+      }
+
+      .counter-active,
+      .counter-total {
+        font-size: 52px;
+      }
+
+      .counter-slash {
+        font-size: 46px;
+      }
+
+      .work-bottom-right {
+        right: 18px;
+        bottom: 22px;
+      }
+
+      .scroll-hint-tag {
+        display: none;
+      }
+
+      /* Mobile About View */
+      .view-about {
+        padding: 112px 18px 36px;
+      }
+
+      .about-upper-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .about-spacer-col {
+        display: none;
+      }
+
+      .about-portrait-col {
+        align-items: center;
+      }
+
+      .manifesto-block {
+        grid-template-columns: 1fr;
+        gap: 6px;
+      }
+
+      .about-bottom-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+      }
+
+      .process-sheet {
+        transform: translate3d(0, 0, 0) rotate(0deg) scale(1) !important;
+        padding: 20px 18px;
+      }
+
+      .process-row {
+        grid-template-columns: 32px 1fr;
+      }
+
+      .process-step-name {
+        grid-column: 2;
+      }
+
+      .process-desc {
+        grid-column: 2;
+      }
+
+      /* Mobile Playground View */
+      .view-playground {
+        padding: 112px 18px 48px;
+        grid-template-columns: 1fr;
+      }
+
+      .playground-left-sticky {
+        position: relative;
+        top: 0;
+        height: auto;
+        gap: 12px;
+      }
+
+      .playground-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+      }
+
+      /* Mobile Contact Cards */
+      .contact-cards-pair {
+        flex-direction: column;
+        gap: 14px;
+      }
+
+      .contact-card-dark,
+      .contact-card-light {
+        width: 100%;
+        min-height: auto;
+        transform: none !important;
+      }
+
+      /* Mobile Project Detail Sheet */
+      .sheet-body {
+        grid-template-columns: 1fr;
+        padding: 18px 16px 88px;
+      }
+
+      .sheet-left-info {
+        position: relative;
+        top: 0;
+      }
+
+      .sheet-right-rail {
+        display: none;
+      }
+
+      .sheet-giant-title {
+        right: 16px;
+        bottom: 12px;
+        font-size: 32px;
+        max-width: 85vw;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===================== BRIEF INTRO SPLASH (JOLIE ANH IN CORAL RED) ===================== -->
+  <div class="intro-splash" id="introSplash" aria-hidden="true">
+    <div class="intro-wordmark">JOLIE ANH</div>
+    <div class="intro-counter" id="introCounter">2026®</div>
+  </div>
+
+  <!-- ===================== DESKTOP 5-COLUMN HEADER (HUYML.CO EXACT LAYOUT) ===================== -->
+  <header class="site-header">
+    <!-- Col 1: Vertical Stamp Badge -->
+    <div class="brand-stamp" data-nav="work" title="Jolie Anh — Return to Work">
+      <div class="stamp-micro-top">
+        <span>copyright 2026</span>
+        <span>+84 hcmc, vn</span>
+      </div>
+      <div class="stamp-body">
+        <div class="stamp-vertical-name">JOLIE<sup>®</sup></div>
+        <div class="stamp-portrait-box">
+          <img src="assets/jolie-avatar.jpg" alt="Jolie Anh" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Col 2: Menu -->
+    <div>
+      <div class="header-col-label">Menu</div>
+      <nav class="nav-menu-list" aria-label="Primary Navigation">
+        <button class="nav-item-btn active" type="button" data-nav="work">
+          <span class="nav-arrow">→</span><span>WORK</span>
+        </button>
+        <button class="nav-item-btn" type="button" data-nav="about">
+          <span class="nav-arrow">→</span><span>ABOUT</span>
+        </button>
+        <button class="nav-item-btn" type="button" data-nav="playground">
+          <span class="nav-arrow">→</span><span>PLAYGROUND</span>
+        </button>
+        <button class="nav-item-btn" type="button" data-nav="contact">
+          <span class="nav-arrow">→</span><span>CONTACT</span>
+        </button>
+      </nav>
+    </div>
+
+    <!-- Col 3: Discipline / Studio Mode -->
+    <div>
+      <div class="header-col-label">Discipline</div>
+      <div class="header-meta-value">Retouch + Brand Design</div>
+    </div>
+
+    <!-- Col 4: Working Globally + Live HCMC Clock -->
+    <div>
+      <div class="header-col-label">Working globally</div>
+      <div class="header-meta-value">
+        <span class="live-dot"></span>
+        <span id="liveClockDesktop">HCMC, 08:45 PM</span>
+      </div>
+    </div>
+
+    <!-- Col 5: For Inquiries -->
+    <div class="header-col-right">
+      <div class="header-col-label">For inquiries</div>
+      <a class="header-meta-link" href="mailto:jolieanh.studio@gmail.com">jolieanh.studio@gmail.com</a>
+    </div>
+  </header>
+
+  <!-- ===================== MOBILE HEADER BAR (IPHONE / RESPONSIVE) ===================== -->
+  <header class="mobile-topbar">
+    <div class="mobile-topbar-row">
+      <button class="mobile-menu-lines" type="button" data-nav="contact" aria-label="Open Contact & Menu">
+        <span></span>
+        <span></span>
+      </button>
+      <button class="mobile-brand-center" type="button" data-nav="work">JOLIE®</button>
+      <button class="mobile-inquiries-btn" type="button" data-nav="contact">SAY HI</button>
+    </div>
+    <div class="mobile-nav-pills">
+      <button class="mobile-nav-pill active" type="button" data-nav="work">→ WORK</button>
+      <button class="mobile-nav-pill" type="button" data-nav="about">ABOUT</button>
+      <button class="mobile-nav-pill" type="button" data-nav="playground">PLAYGROUND (24)</button>
+      <button class="mobile-nav-pill" type="button" data-nav="contact">CONTACT</button>
+    </div>
+  </header>
+
+  <!-- ===================== VIEW 1: WORK (3D CURVED VERTICAL WHEEL) ===================== -->
+  <main class="view-section view-work active" id="viewWork">
+    <!-- Left Synced Metadata Column -->
+    <aside class="work-left-meta">
+      <div class="meta-group">
+        <span class="meta-label">Project</span>
+        <span class="meta-val" id="workMetaTitle">LE THANH HOA RESORT 2026</span>
+      </div>
+      <div class="meta-group">
+        <span class="meta-label">Role</span>
+        <span class="meta-val" id="workMetaRole">Lead Retoucher, Colorist</span>
+      </div>
+      <div class="meta-group">
+        <span class="meta-label">Launch</span>
+        <span class="meta-val" id="workMetaLaunch">January 2026</span>
+      </div>
+      <div class="meta-group">
+        <span class="meta-label">Recognition</span>
+        <span class="meta-val" id="workMetaRecognition">Featured Fashion Lookbook</span>
+      </div>
+      <button class="work-open-pill" id="workOpenActiveBtn" type="button">
+        <span>Open Case Study</span>
+        <span>↗</span>
+      </button>
+    </aside>
+
+    <!-- Center 3D Skewed Card Wheel Stage -->
+    <div class="wheel-stage" id="wheelStage" title="Scroll or drag vertically to spin wheel · Click card to open case study">
+      <div class="wheel-stack" id="wheelStack"></div>
+    </div>
+
+    <!-- Bottom-Left Giant Counter (01 / 08) -->
+    <div class="work-index-counter" id="workIndexCounter">
+      <span class="counter-active" id="counterActiveNum">01</span>
+      <span class="counter-slash">/</span>
+      <span class="counter-total" id="counterTotalNum">08</span>
+    </div>
+
+    <!-- Right Vertical Wheel List + 3 Color Swatches -->
+    <aside class="wheel-right-rail">
+      <div class="wheel-list" id="wheelList"></div>
+      <div class="wheel-swatches" id="wheelSwatches" title="Project Color Grade Palette">
+        <span class="swatch-box" id="swatch1" style="background: #d8b499;"></span>
+        <span class="swatch-box" id="swatch2" style="background: #8c583a;"></span>
+        <span class="swatch-box" id="swatch3" style="background: #221c18;"></span>
+      </div>
+    </aside>
+
+    <!-- Bottom-Right '26 Lookbook Trigger -->
+    <div class="work-bottom-right">
+      <span class="scroll-hint-tag">Scroll or drag to cycle · Click card to inspect</span>
+      <button class="reel-trigger-btn" id="openLookbookReelBtn" type="button">'26 lookbook ▶</button>
+    </div>
+  </main>
+
+  <!-- ===================== VIEW 2: ABOUT (19 / 99 WATERMARK + MANIFESTOS + 4-COL GRID) ===================== -->
+  <section class="view-section view-about" id="viewAbout">
+    <!-- Giant White Watermark Numbers 19 and 99 -->
+    <div class="about-watermark-layer" aria-hidden="true">
+      <span class="watermark-num">19</span>
+      <span class="watermark-num">99</span>
+    </div>
+
+    <div class="about-upper-grid">
+      <div class="about-spacer-col"></div>
+
+      <!-- Center Portrait + Mode Toggles + Process & Approach Trigger -->
+      <div class="about-portrait-col">
+        <div class="about-main-photo" id="aboutMainPhoto">
+          <img src="assets/jolie-avatar.jpg" alt="Jolie Anh Portrait with Fujifilm Camera" />
+        </div>
+        <div class="about-thumb-toggles">
+          <button class="about-mini-thumb active" id="thumbNaturalBtn" type="button" title="Natural Studio Grade">
+            <img src="assets/jolie-avatar.jpg" alt="Natural Grade" />
+          </button>
+          <button class="about-mini-thumb" id="thumbDuotoneBtn" type="button" title="Editorial Duotone Grade">
+            <svg viewBox="0 0 32 32" fill="none">
+              <rect width="32" height="32" fill="#141414"/>
+              <circle cx="16" cy="13" r="6" stroke="#f24e42" stroke-width="1.6"/>
+              <path d="M6 28c1.5-5.5 5.5-8 10-8s8.5 2.5 10 8" stroke="#ececec" stroke-width="1.6"/>
+            </svg>
+          </button>
+        </div>
+        <button class="process-trigger-link" id="openProcessBtn" type="button">Process &amp; Approach</button>
+      </div>
+
+      <!-- Right Coral-Red Uppercase Manifestos -->
+      <div class="about-manifesto-col">
+        <div class="manifesto-block">
+          <span class="manifesto-tag">Personal</span>
+          <p class="manifesto-Copy">
+            GROWING UP IN VIETNAM, I WAS DRAWN TO HOW LIGHT SCULPTS SKIN, FABRIC, AND EMOTION. THAT EARLY OBSESSION WITH PHOTOGRAPHY AND EDITORIAL MAGAZINES SHAPED HOW I SEE EVERY FRAME TODAY — PRESERVING AUTHENTIC MICRO-TEXTURE WHILE ELEVATING COLOR INTO TIMELESS VISUAL STORIES.
+          </p>
+        </div>
+        <div class="manifesto-block">
+          <span class="manifesto-tag">Work</span>
+          <p class="manifesto-Copy">
+            WORKING ACROSS HIGH-END RETOUCHING AND BRAND GRAPHIC DESIGN IN HO CHI MINH CITY, I CRAFT LUMINOUS BEAUTY CAMPAIGNS, RESORT LOOKBOOKS, AND TACTILE PACKAGING SYSTEMS FOR FASHION HOUSES, SKINCARE BRANDS, AND CREATIVE STUDIOS WORLDWIDE.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom 4-Column Editorial Grid -->
+    <div class="about-bottom-grid">
+      <div>
+        <div class="about-col-title">Selected Campaigns</div>
+        <div class="about-stat-Split">
+          <div class="about-stat-num">08 /</div>
+          <ul class="about-list">
+            <li><button type="button" data-open-sheet="resort-2026">Le Thanh Hoa Resort 2026</button></li>
+            <li><button type="button" data-open-sheet="beauty-karina-chipu">Chipu &amp; Karina Macro Beauty</button></li>
+            <li><button type="button" data-open-sheet="paulas-choice">Paula's Choice Vietnam</button></li>
+            <li><button type="button" data-open-sheet="editorial-bloom">Editorial: Bloom &amp; Glamdoll</button></li>
+            <li><button type="button" data-open-sheet="moonlight-datt">Moonlight Editorial &amp; DATT</button></li>
+            <li><button type="button" data-open-sheet="dark-reflection">The Dark Reflection Series</button></li>
+          </ul>
+        </div>
+      </div>
+
+      <div>
+        <div class="about-col-title">Curated Moodboards</div>
+        <div class="about-stat-Split">
+          <div class="about-stat-num">05 /</div>
+          <ul class="about-list">
+            <li><button type="button" data-open-sheet="mb-visual-refs">Visual References Archive</button></li>
+            <li><button type="button" data-open-sheet="mb-post-social">Post Social ('KIND OF LOVE')</button></li>
+            <li><button type="button" data-open-sheet="mb-design-brand">Vietnamese Brocade Craft</button></li>
+            <li><button type="button" data-open-sheet="mb-design-brand">Doc Mo Farm Packaging</button></li>
+            <li><button type="button" data-open-sheet="mb-portfolio-typo">Osklen Verão 25 &amp; Type</button></li>
+          </ul>
+        </div>
+      </div>
+
+      <div>
+        <div class="about-col-title">Capabilities</div>
+        <ul class="about-list">
+          <li>High-End Beauty Retouching</li>
+          <li>Non-Destructive Frequency Separation</li>
+          <li>Editorial Color Grading &amp; Look Dev</li>
+          <li>Fashion Lookbook Post-Production</li>
+          <li>Commercial Product &amp; Specular Craft</li>
+          <li>Brand Identity &amp; Print Systems</li>
+          <li>Social Campaign Art Direction</li>
+          <li>Typography &amp; Packaging Design</li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="about-col-title">Clients &amp; Collaborations</div>
+        <ul class="about-list">
+          <li>Le Thanh Hoa</li>
+          <li>Chipu Official</li>
+          <li>Model Karina</li>
+          <li>Paula's Choice Vietnam</li>
+          <li>DATT Official</li>
+          <li>Glamdoll Studio</li>
+          <li>Layla &amp; Soluna Candles</li>
+          <li>Lemoji Wine &amp; Doc Mo Farm</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== VIEW 3: PLAYGROUND (24 ARCHIVE + 4-COLUMN GRID) ===================== -->
+  <section class="view-section view-playground" id="viewPlayground">
+    <aside class="playground-left-sticky">
+      <div class="playground-watermark" id="playgroundCounter">24</div>
+      <div class="playground-info-box">
+        <p class="playground-desc">
+          Welcome to my Playground — a curated archive of 24 retouching studies, skin luminosity tests, poster typography, and visual reference boards crafted between major campaigns.
+        </p>
+        <div class="playground-filters" id="playgroundFilters">
+          <button class="pg-filter-btn active" type="button" data-pg-filter="all">All (24)</button>
+          <button class="pg-filter-btn" type="button" data-pg-filter="beauty">Beauty &amp; Skin</button>
+          <button class="pg-filter-btn" type="button" data-pg-filter="lookbook">Lookbooks</button>
+          <button class="pg-filter-btn" type="button" data-pg-filter="brand">Brand &amp; Type</button>
+        </div>
+      </div>
+    </aside>
+
+    <div class="playground-grid" id="playgroundGrid"></div>
+  </section>
+
+  <!-- ===================== OVERLAY: APPROACH & PROCESS MODAL (FROM ABOUT VIEW) ===================== -->
+  <div class="process-modal-backdrop" id="processModal" role="dialog" aria-modal="true" aria-labelledby="processModalTitle">
+    <div class="process-sheet">
+      <div class="process-header">
+        <h2 class="process-title" id="processModalTitle">APPROACH &amp; PROCESS</h2>
+        <button class="process-close-btn" id="closeProcessBtn" type="button">Close</button>
+      </div>
+
+      <div class="process-row">
+        <div class="process-code">A1</div>
+        <div class="process-step-name">Texture First</div>
+        <div class="process-desc">Great retouching is invisible. Every frame is sculpted using non-destructive dodge-and-burn and micro-frequency separation so skin pores, flyaway hair, and fabric weave remain tactile and human.</div>
+      </div>
+      <div class="process-row">
+        <div class="process-code">P1</div>
+        <div class="process-step-name">RAW &amp; Lighting Audit</div>
+        <div class="process-desc">Evaluating 16-bit RAW captures, specular highlights, and shadow roll-off to establish a unified exposure baseline across the entire lookbook or campaign.</div>
+      </div>
+      <div class="process-row">
+        <div class="process-code">P2</div>
+        <div class="process-step-name">Frequency Separation</div>
+        <div class="process-desc">Separating high-frequency pore structure from low-frequency tonal transitions to remove blemishes without plastic blur.</div>
+      </div>
+      <div class="process-row">
+        <div class="process-code">P3</div>
+        <div class="process-step-name">Dodge &amp; Burn Sculpting</div>
+        <div class="process-desc">Micro-level luminance contouring along cheekbones, collarbones, and garment folds to enhance three-dimensional depth.</div>
+      </div>
+      <div class="process-row">
+        <div class="process-code">P4</div>
+        <div class="process-step-name">Editorial Color Grade</div>
+        <div class="process-desc">Crafting custom split-toning curves, true-to-life skin undertones, and filmic highlight warmth tailored to the brand identity.</div>
+      </div>
+      <div class="process-row">
+        <div class="process-code">P5</div>
+        <div class="process-step-name">Glass &amp; Product Polish</div>
+        <div class="process-desc">Rebuilding clean bottle geometry, liquid refraction, and label crispness for skincare, candle, and beverage key visuals.</div>
+      </div>
+      <div class="process-row">
+        <div class="process-code">P6</div>
+        <div class="process-step-name">Typography &amp; Grid</div>
+        <div class="process-desc">Pairing retouched imagery with editorial serif/grotesk typography for social carousels, lookbook spreads, and print brochures.</div>
+      </div>
+      <div class="process-row">
+        <div class="process-code">P7</div>
+        <div class="process-step-name">Master Archive Delivery</div>
+        <div class="process-desc">Delivering color-calibrated CMYK print masters and sRGB digital assets ready for global campaign launch.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== OVERLAY: CONTACT FLOATING TILTED CARDS ===================== -->
+  <div class="contact-overlay" id="contactOverlay" role="dialog" aria-modal="true" aria-label="Contact & Credits">
+    <div class="contact-cards-pair">
+      <!-- Dark Tilted Card: COME SAY HI -->
+      <div class="contact-card-dark">
+        <div class="contact-card-top">
+          <h2 class="contact-card-heading">COME SAY HI</h2>
+          <button class="contact-close-link" id="closeContactBtn1" type="button">Close</button>
+        </div>
+
+        <div class="contact-links-block">
+          <div>
+            <div class="contact-sub-label">For inquiries</div>
+            <div class="contact-link-list">
+              <a href="mailto:jolieanh.studio@gmail.com">jolieanh.studio@gmail.com</a>
+              <button type="button" id="copyEmailBtn">Copy email address ⎘</button>
+            </div>
+          </div>
+          <div>
+            <div class="contact-sub-label">Connect</div>
+            <div class="contact-link-list">
+              <a href="https://www.behance.net/anhjolie99" target="_blank" rel="noopener">Behance ↗</a>
+              <a href="https://www.behance.net/anhjolie99/moodboards" target="_blank" rel="noopener">Moodboards ↗</a>
+              <a href="mailto:jolieanh.studio@gmail.com">Book Retouching ↗</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Light Tilted Card: CREDITS -->
+      <div class="contact-card-light">
+        <div class="contact-card-top">
+          <h2 class="contact-card-heading">CREDITS</h2>
+          <button class="contact-close-link" id="closeContactBtn2" type="button">Close</button>
+        </div>
+
+        <div class="credits-meta-stack">
+          <div>
+            <div class="contact-sub-label">Retouching &amp; Design</div>
+            <div>Jolie Anh (Ho Chi Minh City, VN)</div>
+          </div>
+          <div>
+            <div class="contact-sub-label">Typography</div>
+            <div>BT Glyphius, BT Grotesk &amp; F37 Bolton</div>
+          </div>
+          <div>
+            <div class="contact-sub-label">Selected Archive</div>
+            <div>2023 — 2026 Edition · All Rights Reserved</div>
+          </div>
+        </div>
+
+        <!-- Subtle Line-Art Camera & Portrait Emblem -->
+        <svg class="credits-line-art" viewBox="0 0 200 200" fill="none" stroke="#111" stroke-width="1.5">
+          <circle cx="110" cy="80" r="42" />
+          <circle cx="110" cy="80" r="20" />
+          <rect x="48" y="45" width="124" height="82" rx="8" />
+          <path d="M35 175c15-34 45-48 75-48s60 14 75 48" />
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== PROJECT DETAIL LOOKBOOK SHEET (HUYML.CO/PROJECT/... + SWIPE DOWN) ===================== -->
+  <div class="project-sheet-backdrop" id="projectSheetBackdrop" role="dialog" aria-modal="true" aria-labelledby="sheetGiantTitle">
+    <div class="project-sheet" id="projectSheet">
+      <!-- Top Bar with Native iPhone Pull-Down Handle -->
+      <div class="sheet-topbar" id="sheetTopbar">
+        <div class="sheet-drag-handle" id="sheetDragHandle" title="Swipe or drag down to close">
+          <div class="sheet-drag-pill"></div>
+          <span class="sheet-drag-hint">↓ Swipe down to close</span>
+        </div>
+        <div class="sheet-topbar-row">
+          <button class="sheet-back-btn" id="sheetBackBtn" type="button">← WORK</button>
+          <div class="sheet-top-actions">
+            <button class="grade-compare-btn" id="sheetCompareGradeBtn" type="button">✨ Toggle Raw / Retouched</button>
+            <button class="sheet-close-btn" id="sheetCloseBtn" type="button">Close ✕</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3-Column Scrollable Lookbook Body -->
+      <div class="sheet-body" id="sheetBody">
+        <!-- Left Sticky Metadata Column -->
+        <aside class="sheet-left-info">
+          <div class="meta-group">
+            <span class="meta-label">About</span>
+            <p class="sheet-story-text" id="sheetStory"></p>
+          </div>
+          <div class="meta-group">
+            <span class="meta-label">Artist</span>
+            <span class="meta-val">Jolie Anh</span>
+          </div>
+          <div class="meta-group">
+            <span class="meta-label">Role</span>
+            <span class="meta-val" id="sheetRole"></span>
+          </div>
+          <div class="meta-group">
+            <span class="meta-label">Launch</span>
+            <span class="meta-val" id="sheetLaunch"></span>
+          </div>
+          <div class="meta-group">
+            <span class="meta-label">Discipline</span>
+            <span class="meta-val" id="sheetRecognition"></span>
+          </div>
+          <a class="sheet-behance-link" href="https://www.behance.net/anhjolie99" target="_blank" rel="noopener">
+            View Full Series on Behance ↗
+          </a>
+        </aside>
+
+        <!-- Center High-Res Vertical Frames Stack -->
+        <div class="sheet-frames-col" id="sheetFrames"></div>
+
+        <!-- Right Vertical Thumbnail Jump Strip -->
+        <aside class="sheet-right-rail" id="sheetThumbStrip"></aside>
+      </div>
+
+      <!-- Bottom-Right Giant Coral-Red Display Title -->
+      <h2 class="sheet-giant-title" id="sheetGiantTitle">RESORT 2026</h2>
+    </div>
+  </div>
+
+  <!-- ===================== JOLIE ANH — HUYML.CO INTERACTIVE ENGINE ===================== -->
+  <script>
+    // Complete Curated Projects & Moodboards Database for Jolie Anh
+    const PROJECTS = [
+      {
+        id: "resort-2026",
+        shortTitle: "LE THANH HOA RESORT '26",
+        giantTitle: "RESORT 2026",
+        title: "LE THANH HOA RESORT 2026",
+        role: "Lead Retoucher, Colorist",
+        launch: "January 2026",
+        recognition: "Featured Fashion Lookbook",
+        swatches: ["#d9b394", "#8e583b", "#211b17"],
+        story: "Full campaign retouching and editorial color grading for Le Thanh Hoa Resort 2026. Focused on preserving fluid silk movement, sunlit golden-hour highlights, and natural skin micro-contrast across full-length resort spreads.",
+        images: [
+          "https://mir-s3-cdn-cf.behance.net/projects/max_808/3b5515251380835.Y3JvcCw1NTA0LDQzMDUsMCwxOTIw.jpg",
+          "https://mir-s3-cdn-cf.behance.net/projects/max_808/b65f61251378263.Y3JvcCwzMTMxLDI0NDksODgzLDExNzg.jpg",
+          "https://mir-s3-cdn-cf.behance.net/projects/max_808/c6bcae251377177.Y3JvcCw1NTA0LDQzMDUsMCw4OTk.jpg",
+          "https://mir-s3-cdn-cf.behance.net/b1651c69d4bcf83d40b5f0b8733e53f3/2107101e-ffc9-4a9c-a873-253c81a0b21d_rwc_179x1585x5677x1059x8000.jpg?h=ac0087582e6fafe2bf839a817131ead8"
+        ]
+      },
+      {
+        id: "beauty-karina-chipu",
+        shortTitle: "CHIPU & KARINA BEAUTY",
+        giantTitle: "BEAUTY RETOUCH",
+        title: "Beauty Retouch (Chipu & Model Karina)",
+        role: "Senior Beauty Retoucher",
+        launch: "December 2025",
+        recognition: "Macro Skin & Beauty Series",
+        swatches: ["#e8c6b8", "#b26a5a", "#2b1d1b"],
+        story: "Close-up macro beauty retouching starring Chipu and Model Karina. Built with zero-blur frequency separation and micro dodge-and-burn contouring to keep every pore, eyelash, and specular catchlight razor-sharp.",
+        images: [
+          "https://mir-s3-cdn-cf.behance.net/projects/max_808/eb3c82251380249.Y3JvcCw5MDcsNzA5LDQzMywyNg.jpg",
+          "https://mir-s3-cdn-cf.behance.net/projects/max_808/1bc210242325057.Y3JvcCwzMTUxLDI0NjQsMCw4MTg.jpg",
+          "https://mir-s3-cdn-cf.behance.net/projects/max_808/98a9e4247860715.Y3JvcCw2NTQ1LDUxMjAsNTY3LDA.jpg",
+          "https://mir-s3-cdn-cf.behance.net/projects/max_808/631aa1251378989.Y3JvcCw4MzI0LDY1MTAsMCwyMjA0.jpg"
+        ]
+      },
+      {
+        id: "paulas-choice",
+        shortTitle: "PAULA'S CHOICE VIETNAM",
+        giantTitle: "PAULA'S CHOICE",
+        title: "Paula's Choice Vietnam & Brand Campaigns",
+        role: "Product Retoucher, Designer",
+        launch: "November 2025",
+        recognition: "Commercial Skincare & Key Visuals",
+        swatches: ["#cfdce3", "#5b7d91", "#1c2830"],
+        story: "Commercial skincare key visuals for Paula's Choice Vietnam alongside luxury lifestyle product campaigns for Layla Candles, Soluna Candles, and Lemoji Wine. Engineered for clean specular reflections and clinical clarity.",
+        images: [
+          "https://mir-s3-cdn-cf.behance.net/projects/max_808/e50c9c251379691.Y3JvcCwxMDkzLDg1NSw4NTUsMA.jpg",
+          "https://mir-s3-cdn-cf.behance.net/projects/max_808/5e6978215864055.Y3JvcCwyMTE0LDE2NTQsMjYxLDA.jpg",
+          "https://mir-s3-cdn-cf.behance.net/projects/max_808/8e19f0194332711.Y3JvcCwyODc2LDIyNTAsNTYyLDA.jpg",
+          "https://mir-s3-cdn-cf.behance.net/projects/max_808/734730194331911.Y3JvcCwzMjkwLDI1NzQsMTYsMA.jpg"
+        ]
+      },
+      {
+        id: "editorial-bloom",
+        shortTitle: "EDITORIAL: BLOOM & GLAMDOLL",
+        giantTitle: "EDITORIAL BLOOM",
+        title: "Editorial: Bloom & Lookbook Glamdoll",
+        role: "Editorial Retoucher",
+        launch: "October 2025",
+        recognition: "Fine-Art Portrait Lookbook",
+        swatches: ["#d69fb0", "#7c3c50", "#191316"],
+        story: "Conceptual portrait and fashion lookbook retouching across Editorial: Bloom and Lookbook: Glamdoll. Explores sculptural studio shadows, metallic highlights, and expressive color palettes.",
+        images: [
+          "https://mir-s3-cdn-cf.behance.net/projects/max_808/631aa1251378989.Y3JvcCw4MzI0LDY1MTAsMCwyMjA0.jpg",
+          "https://mir-s3-cdn-cf.behance.net/projects/max_808/8d1d26251377661.Y3JvcCw1NTA0LDQzMDUsMCwxNTI1.jpg",
+          "https://mir-s3-cdn-cf.behance.net/projects/max_808/98a9e4247860715.Y3JvcCw2NTQ1LDUxMjAsNTY3LDA.jpg",
+          "https://mir-s3-cdn-cf.behance.net/projects/max_808/144f72205598595.Y3JvcCwzNTYxLDI3ODYsMzYxLDA.jpg"
+        ]
+      },
+      {
+        id: "moonlight-datt",
+        shortTitle: "MOONLIGHT EDITORIAL & DATT",
+        giantTitle: "MOONLIGHT DATT",
+        title: "Moonlight Editorial & Lookbook for DATT",
+        role: "Lead Retoucher",
+        launch: "September 2025",
+        recognition: "Runway & Studio Lookbook",
+        swatches: ["#c9cbd1", "#686e7a", "#17191e"],
+        story: "Luminous monochrome and cool moonlight tonal grading for the Moonlight Editorial series and DATT lookbook collection, balancing crisp garment tailoring with porcelain skin luminosity.",
+        images: [
+          "https://mir-s3-cdn-cf.behance.net/projects/max_808/b65f61251378263.Y3JvcCwzMTMxLDI0NDksODgzLDExNzg.jpg",
+          "https://mir-s3-cdn-cf.behance.net/projects/max_808/c6bcae251377177.Y3JvcCw1NTA0LDQzMDUsMCw4OTk.jpg",
+          "https://mir-s3-cdn-cf.behance.net/projects/max_808/3b5515251380835.Y3JvcCw1NTA0LDQzMDUsMCwxOTIw.jpg"
+        ]
+      },
+      {
+        id: "dark-reflection",
+        shortTitle: "THE DARK REFLECTION",
+        giantTitle: "DARK REFLECTION",
+        title: "The Dark Reflection & Poster Hongkong",
+        role: "Retoucher, Graphic Designer",
+        launch: "August 2025",
+        recognition: "Conceptual Poster & Portrait",
+        swatches: ["#c44d3f", "#4a2422", "#0f0d0e"],
+        story: "High-contrast chiaroscuro portrait retouching paired with cinematic Hong Kong poster typography and deep crimson color grading.",
+        images: [
+          "https://mir-s3-cdn-cf.behance.net/projects/max_808/98a9e4247860715.Y3JvcCw2NTQ1LDUxMjAsNTY3LDA.jpg",
+          "https://mir-s3-cdn-cf.behance.net/projects/max_808/144f72205598595.Y3JvcCwzNTYxLDI3ODYsMzYxLDA.jpg",
+          "https://mir-s3-cdn-cf.behance.net/projects/max_808/8d1d26251377661.Y3JvcCw1NTA0LDQzMDUsMCwxNTI1.jpg"
+        ]
+      },
+      {
+        id: "mb-visual-refs",
+        shortTitle: "VISUAL REFERENCES BOARD",
+        giantTitle: "VISUAL REFS",
+        title: "Curated Moodboard: Visual References",
+        role: "Art Direction & Curation",
+        launch: "July 2025",
+        recognition: "Behance Moodboard Archive",
+        swatches: ["#e3c0a8", "#9c6d52", "#261c17"],
+        story: "Jolie Anh's studio reference board studying macro skin texture, directional butterfly lighting, and sculptural beauty composition.",
+        images: [
+          "https://mir-s3-cdn-cf.behance.net/projects/max_808/1bc210242325057.Y3JvcCwzMTUxLDI0NjQsMCw4MTg.jpg",
+          "https://mir-s3-cdn-cf.behance.net/projects/max_808/8ab153245744275.Y3JvcCwzMjQwLDI1MzQsMCwxMzA3.jpg",
+          "https://mir-s3-cdn-cf.behance.net/projects/max_808/eb3c82251380249.Y3JvcCw5MDcsNzA5LDQzMywyNg.jpg"
+        ]
+      },
+      {
+        id: "mb-design-brand",
+        shortTitle: "BRAND & PRINT SYSTEMS",
+        giantTitle: "BRAND & PRINT",
+        title: "Design & Brand: Vietnamese Brocade Craft & Doc Mo Farm",
+        role: "Graphic Designer, Curator",
+        launch: "June 2025",
+        recognition: "Print & Identity Curation",
+        swatches: ["#d4c5a9", "#5d6e4e", "#22261e"],
+        story: "Tactile print, editorial grid, and organic packaging curation featuring Brochure Design | Vietnamese Brocade Craft, Doc Mo Farm, Osklen Verão 25, and 'KIND OF LOVE' social storytelling.",
+        images: [
+          "https://mir-s3-cdn-cf.behance.net/project_modules/disp/10176a162341439.63d3e4496464b.jpg",
+          "https://mir-s3-cdn-cf.behance.net/projects/max_808/cad4ff238627251.Y3JvcCw1NDY0LDQyNzMsMCw1NTQ.jpg",
+          "https://mir-s3-cdn-cf.behance.net/projects/max_808/897d13217922229.Y3JvcCwxMzgwLDEwODAsMjcwLDA.png",
+          "https://mir-s3-cdn-cf.behance.net/projects/max_808/21cc31107780715.Y3JvcCwxNDAwLDEwOTUsMCwxMw.jpg"
+        ]
+      }
+    ];
+
+    // Extra lookup aliases for About links
+    const PROJECT_BY_ID = {};
+    PROJECTS.forEach((p) => { PROJECT_BY_ID[p.id] = p; });
+    PROJECT_BY_ID["mb-post-social"] = PROJECTS[7];
+    PROJECT_BY_ID["mb-portfolio-typo"] = PROJECTS[7];
+
+    function pad2(n) {
+      return n < 10 ? "0" + n : String(n);
+    }
+
+    // ===================== 1. INTRO SPLASH REVEAL =====================
+    const introSplash = document.getElementById("introSplash");
+    setTimeout(() => {
+      if (introSplash) introSplash.classList.add("hidden");
+    }, 650);
+
+    // ===================== 2. LIVE HCMC CLOCK =====================
+    function updateHcmcClock() {
+      const el = document.getElementById("liveClockDesktop");
+      if (!el) return;
+      try {
+        const now = new Date();
+        const timeStr = now.toLocaleTimeString("en-US", {
+          timeZone: "Asia/Ho_Chi_Minh",
+          hour: "2-digit",
+          minute: "2-digit",
+          hour12: true
+        });
+        el.textContent = `HCMC, ${timeStr}`;
+      } catch (e) {
+        el.textContent = "HCMC, GMT+7";
+      }
+    }
+    updateHcmcClock();
+    setInterval(updateHcmcClock, 30000);
+
+    // ===================== 3. 3D SKEWED VERTICAL WHEEL ENGINE (HUYML.CO SIGNATURE) =====================
+    const wheelStack = document.getElementById("wheelStack");
+    const wheelList = document.getElementById("wheelList");
+    const wheelStage = document.getElementById("wheelStage");
+    const workMetaTitle = document.getElementById("workMetaTitle");
+    const workMetaRole = document.getElementById("workMetaRole");
+    const workMetaLaunch = document.getElementById("workMetaLaunch");
+    const workMetaRecognition = document.getElementById("workMetaRecognition");
+    const counterActiveNum = document.getElementById("counterActiveNum");
+    const counterTotalNum = document.getElementById("counterTotalNum");
+    const swatch1 = document.getElementById("swatch1");
+    const swatch2 = document.getElementById("swatch2");
+    const swatch3 = document.getElementById("swatch3");
+
+    counterTotalNum.textContent = pad2(PROJECTS.length);
+
+    let targetWheelIndex = 0;
+    let currentWheelPos = 0;
+    let activeCardIndex = -1;
+
+    // Build 3D Cards & Right Wheel List Items
+    const cardEls = [];
+    const listEls = [];
+
+    PROJECTS.forEach((proj, idx) => {
+      const card = document.createElement("div");
+      card.className = "wheel-card";
+      card.dataset.index = String(idx);
+      card.innerHTML = `
+        <img src="${proj.images[0]}" alt="${proj.title}" />
+        <div class="wheel-card-badge">${pad2(idx + 1)} · ${proj.shortTitle} — Click to inspect</div>
+      `;
+      card.addEventListener("click", () => {
+        if (Math.abs(currentWheelPos - idx) < 0.35) {
+          openProjectSheet(proj.id);
+        } else {
+          targetWheelIndex = idx;
+        }
+      });
+      wheelStack.appendChild(card);
+      cardEls.push(card);
+
+      const item = document.createElement("button");
+      item.type = "button";
+      item.className = "wheel-list-item";
+      item.textContent = proj.shortTitle;
+      item.addEventListener("click", () => {
+        if (activeCardIndex === idx) {
+          openProjectSheet(proj.id);
+        } else {
+          targetWheelIndex = idx;
+        }
+      });
+      wheelList.appendChild(item);
+      listEls.push(item);
+    });
+
+    function syncActiveProjectMeta(idx) {
+      const normalized = ((idx % PROJECTS.length) + PROJECTS.length) % PROJECTS.length;
+      if (normalized === activeCardIndex) return;
+      activeCardIndex = normalized;
+      const proj = PROJECTS[normalized];
+
+      workMetaTitle.textContent = proj.title;
+      workMetaRole.textContent = proj.role;
+      workMetaLaunch.textContent = proj.launch;
+      workMetaRecognition.textContent = proj.recognition;
+      counterActiveNum.textContent = pad2(normalized + 1);
+
+      swatch1.style.backgroundColor = proj.swatches[0];
+      swatch2.style.backgroundColor = proj.swatches[1];
+      swatch3.style.backgroundColor = proj.swatches[2];
+
+      cardEls.forEach((el, i) => el.classList.toggle("is-active", i === normalized));
+      listEls.forEach((el, i) => el.classList.toggle("is-active", i === normalized));
+    }
+
+    //Shortest signed distance around circular array
+    function circularDelta(idx, center, total) {
+      let diff = idx - center;
+      while (diff > total / 2) diff -= total;
+      while (diff < -total / 2) diff += total;
+      return diff;
+    }
+
+    function renderWheelFrame() {
+      currentWheelPos += (targetWheelIndex - currentWheelPos) * 0.14;
+      const total = PROJECTS.length;
+      const roundedIdx = ((Math.round(currentWheelPos) % total) + total) % total;
+      syncActiveProjectMeta(roundedIdx);
+
+      cardEls.forEach((card, i) => {
+        const d = circularDelta(i, currentWheelPos, total);
+        const absD = Math.abs(d);
+
+        // Exact huyml.co 3D diagonal cylinder stack transform
+        const yOffset = d * 108;
+        const xOffset = d * -24;
+        const zOffset = -absD * 115;
+        const rotX = d * -11;
+        const rotY = -24;
+        const rotZ = 13 + d * 2.2;
+        const skewY = -7;
+        const scale = Math.max(0.62, 1 - absD * 0.08);
+        const opacity = absD > 3.2 ? 0 : Math.max(0.15, 1 - absD * 0.28);
+
+        card.style.zIndex = String(100 - Math.round(absD * 20));
+        card.style.opacity = String(opacity);
+        card.style.pointerEvents = absD > 2.4 ? "none" : "auto";
+        card.style.transform = `translate3d(${xOffset}px, ${yOffset}px, ${zOffset}px) rotateX(${rotX}deg) rotateY(${rotY}deg) rotateZ(${rotZ}deg) skewY(${skewY}deg) scale(${scale})`;
+      });
+
+      listEls.forEach((item, i) => {
+        const d = circularDelta(i, currentWheelPos, total);
+        const absD = Math.abs(d);
+        const y = d * 26;
+        const x = -Math.pow(absD, 1.45) * 8;
+        const opacity = absD > 3.5 ? 0 : Math.max(0.18, 1 - absD * 0.28);
+        item.style.transform = `translate3d(${x}px, calc(-50% + ${y}px), 0)`;
+        item.style.opacity = String(opacity);
+      });
+
+      requestAnimationFrame(renderWheelFrame);
+    }
+    requestAnimationFrame(renderWheelFrame);
+
+    // Mouse Wheel & Trackpad Spin on WORK View
+    let wheelCooldown = 0;
+    window.addEventListener("wheel", (e) => {
+      if (!document.getElementById("viewWork").classList.contains("active")) return;
+      if (document.getElementById("projectSheetBackdrop").classList.contains("open")) return;
+      if (document.getElementById("contactOverlay").classList.contains("open")) return;
+
+      const now = Date.now();
+      if (now - wheelCooldown < 55) return;
+      if (Math.abs(e.deltaY) > 6) {
+        targetWheelIndex += e.deltaY > 0 ? 1 : -1;
+        wheelCooldown = now;
+      }
+    }, { passive: true });
+
+    // Touch / Pointer Vertical Drag on 3D Wheel Stage
+    let stageDragStartY = 0;
+    let stageDragStartIndex = 0;
+    let isDraggingStage = false;
+
+    wheelStage.addEventListener("pointerdown", (e) => {
+      if (e.target.closest("button")) return;
+      isDraggingStage = true;
+      stageDragStartY = e.clientY;
+      stageDragStartIndex = targetWheelIndex;
+    });
+
+    window.addEventListener("pointermove", (e) => {
+      if (!isDraggingStage) return;
+      const dy = e.clientY - stageDragStartY;
+      targetWheelIndex = stageDragStartIndex - dy / 95;
+    });
+
+    window.addEventListener("pointerup", () => {
+      if (!isDraggingStage) return;
+      isDraggingStage = false;
+      targetWheelIndex = Math.round(targetWheelIndex);
+    });
+
+    document.getElementById("workOpenActiveBtn").addEventListener("click", () => {
+      const proj = PROJECTS[activeCardIndex >= 0 ? activeCardIndex : 0];
+      if (proj) openProjectSheet(proj.id);
+    });
+
+    document.getElementById("openLookbookReelBtn").addEventListener("click", () => {
+      openProjectSheet("resort-2026");
+    });
+
+    // ===================== 4. NAVIGATION CONTROLLER (WORK / ABOUT / PLAYGROUND / CONTACT) =====================
+    const views = {
+      work: document.getElementById("viewWork"),
+      about: document.getElementById("viewAbout"),
+      playground: document.getElementById("viewPlayground")
+    };
+    const contactOverlay = document.getElementById("contactOverlay");
+    const processModal = document.getElementById("processModal");
+
+    function switchView(target) {
+      if (target === "contact") {
+        contactOverlay.classList.add("open");
+        return;
+      }
+      contactOverlay.classList.remove("open");
+      processModal.classList.remove("open");
+
+      Object.keys(views).forEach((k) => {
+        views[k].classList.toggle("active", k === target);
+      });
+
+      document.querySelectorAll("[data-nav]").forEach((btn) => {
+        if (btn.classList.contains("nav-item-btn") || btn.classList.contains("mobile-nav-pill")) {
+          btn.classList.toggle("active", btn.dataset.nav === target);
+        }
+      });
+
+      window.scrollTo({ top: 0, behavior: "instant" });
+    }
+
+    document.querySelectorAll("[data-nav]").forEach((el) => {
+      el.addEventListener("click", () => {
+        switchView(el.dataset.nav);
+      });
+    });
+
+    // Contact Overlay Close & Copy Email
+    document.getElementById("closeContactBtn1").addEventListener("click", () => contactOverlay.classList.remove("open"));
+    document.getElementById("closeContactBtn2").addEventListener("click", () => contactOverlay.classList.remove("open"));
+    contactOverlay.addEventListener("click", (e) => {
+      if (e.target === contactOverlay) contactOverlay.classList.remove("open");
+    });
+
+    document.getElementById("copyEmailBtn").addEventListener("click", (e) => {
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText("jolieanh.studio@gmail.com").catch(() => {});
+      }
+      e.currentTarget.textContent = "Copied jolieanh.studio@gmail.com ✓";
+    });
+
+    // About Portrait Toggle & Process Modal
+    const aboutMainPhoto = document.getElementById("aboutMainPhoto");
+    const thumbNaturalBtn = document.getElementById("thumbNaturalBtn");
+    const thumbDuotoneBtn = document.getElementById("thumbDuotoneBtn");
+
+    thumbNaturalBtn.addEventListener("click", () => {
+      aboutMainPhoto.classList.remove("duotone-mode");
+      thumbNaturalBtn.classList.add("active");
+      thumbDuotoneBtn.classList.remove("active");
+    });
+
+    thumbDuotoneBtn.addEventListener("click", () => {
+      aboutMainPhoto.classList.add("duotone-mode");
+      thumbDuotoneBtn.classList.add("active");
+      thumbNaturalBtn.classList.remove("active");
+    });
+
+    document.getElementById("openProcessBtn").addEventListener("click", () => {
+      processModal.classList.add("open");
+    });
+    document.getElementById("closeProcessBtn").addEventListener("click", () => {
+      processModal.classList.remove("open");
+    });
+    processModal.addEventListener("click", (e) => {
+      if (e.target === processModal) processModal.classList.remove("open");
+    });
+
+    // ===================== 5. PLAYGROUND 24 ARCHIVE BUILDER =====================
+    const playgroundGrid = document.getElementById("playgroundGrid");
+    const playgroundCounter = document.getElementById("playgroundCounter");
+
+    const PLAYGROUND_ITEMS = [
+      { title: "Resort '26 Golden Grade", category: "lookbook", projectId: "resort-2026", img: "https://mir-s3-cdn-cf.behance.net/projects/max_808/3b5515251380835.Y3JvcCw1NTA0LDQzMDUsMCwxOTIw.jpg" },
+      { title: "Chipu Macro Skin Texture", category: "beauty", projectId: "beauty-karina-chipu", img: "https://mir-s3-cdn-cf.behance.net/projects/max_808/eb3c82251380249.Y3JvcCw5MDcsNzA5LDQzMywyNg.jpg" },
+      { title: "Paula's Choice Clinical Glow", category: "brand", projectId: "paulas-choice", img: "https://mir-s3-cdn-cf.behance.net/projects/max_808/e50c9c251379691.Y3JvcCwxMDkzLDg1NSw4NTUsMA.jpg" },
+      { title: "Editorial Bloom Chiaroscuro", category: "lookbook", projectId: "editorial-bloom", img: "https://mir-s3-cdn-cf.behance.net/projects/max_808/631aa1251378989.Y3JvcCw4MzI0LDY1MTAsMCwyMjA0.jpg" },
+      { title: "Karina Specular Highlight", category: "beauty", projectId: "beauty-karina-chipu", img: "https://mir-s3-cdn-cf.behance.net/projects/max_808/1bc210242325057.Y3JvcCwzMTUxLDI0NjQsMCw4MTg.jpg" },
+      { title: "Moonlight DATT Tailoring", category: "lookbook", projectId: "moonlight-datt", img: "https://mir-s3-cdn-cf.behance.net/projects/max_808/b65f61251378263.Y3JvcCwzMTMxLDI0NDksODgzLDExNzg.jpg" },
+      { title: "Vietnamese Brocade Craft", category: "brand", projectId: "mb-design-brand", img: "https://mir-s3-cdn-cf.behance.net/project_modules/disp/10176a162341439.63d3e4496464b.jpg" },
+      { title: "Dark Reflection Crimson", category: "beauty", projectId: "dark-reflection", img: "https://mir-s3-cdn-cf.behance.net/projects/max_808/98a9e4247860715.Y3JvcCw2NTQ1LDUxMjAsNTY3LDA.jpg" },
+      { title: "Glamdoll Studio Lookbook", category: "lookbook", projectId: "editorial-bloom", img: "https://mir-s3-cdn-cf.behance.net/projects/max_808/8d1d26251377661.Y3JvcCw1NTA0LDQzMDUsMCwxNTI1.jpg" },
+      { title: "Layla Candles Warm Specular", category: "brand", projectId: "paulas-choice", img: "https://mir-s3-cdn-cf.behance.net/projects/max_808/5e6978215864055.Y3JvcCwyMTE0LDE2NTQsMjYxLDA.jpg" },
+      { title: "Resort Movement Spread II", category: "lookbook", projectId: "resort-2026", img: "https://mir-s3-cdn-cf.behance.net/projects/max_808/c6bcae251377177.Y3JvcCw1NTA0LDQzMDUsMCw4OTk.jpg" },
+      { title: "Visual References Lighting", category: "beauty", projectId: "mb-visual-refs", img: "https://mir-s3-cdn-cf.behance.net/projects/max_808/8ab153245744275.Y3JvcCwzMjQwLDI1MzQsMCwxMzA3.jpg" },
+      { title: "'KIND OF LOVE' Social Grid", category: "brand", projectId: "mb-design-brand", img: "https://mir-s3-cdn-cf.behance.net/projects/max_808/cad4ff238627251.Y3JvcCw1NDY0LDQyNzMsMCw1NTQ.jpg" },
+      { title: "Soluna Botanical Packaging", category: "brand", projectId: "paulas-choice", img: "https://mir-s3-cdn-cf.behance.net/projects/max_808/8e19f0194332711.Y3JvcCwyODc2LDIyNTAsNTYyLDA.jpg" },
+      { title: "Lemoji Wine Bottle Grade", category: "brand", projectId: "paulas-choice", img: "https://mir-s3-cdn-cf.behance.net/projects/max_808/734730194331911.Y3JvcCwzMjkwLDI1NzQsMTYsMA.jpg" },
+      { title: "Poster Hongkong Type", category: "brand", projectId: "dark-reflection", img: "https://mir-s3-cdn-cf.behance.net/projects/max_808/144f72205598595.Y3JvcCwzNTYxLDI3ODYsMzYxLDA.jpg" },
+      { title: "Osklen Verão 25 Direction", category: "lookbook", projectId: "mb-design-brand", img: "https://mir-s3-cdn-cf.behance.net/projects/max_808/897d13217922229.Y3JvcCwxMzgwLDEwODAsMjcwLDA.png" },
+      { title: "Doc Mo Farm Identity", category: "brand", projectId: "mb-design-brand", img: "https://mir-s3-cdn-cf.behance.net/projects/max_808/6654e0176119323.Y3JvcCwzMzY3LDI2MzMsMCww.png" },
+      { title: "Logofolio Vol. 03 Marks", category: "brand", projectId: "mb-design-brand", img: "https://mir-s3-cdn-cf.behance.net/projects/max_808/21cc31107780715.Y3JvcCwxNDAwLDEwOTUsMCwxMw.jpg" },
+      { title: "Millennium Campaign Grid", category: "brand", projectId: "mb-design-brand", img: "https://mir-s3-cdn-cf.behance.net/projects/max_808/e1dfa2194673649.Y3JvcCwyNDMwLDE5MDAsMCww.png" },
+      { title: "Ultragaz Editorial Layout", category: "brand", projectId: "mb-design-brand", img: "https://mir-s3-cdn-cf.behance.net/projects/max_808/f5eb0a196255797.Y3JvcCwxMzk5LDEwOTUsMCww.png" },
+      { title: "Graphic Design 2024 Folio", category: "lookbook", projectId: "mb-design-brand", img: "https://mir-s3-cdn-cf.behance.net/projects/max_808/2b8114192088173.Y3JvcCw0Nzk5LDM3NTQsMCww.jpg" },
+      { title: "Verse of the Day Poster", category: "brand", projectId: "mb-design-brand", img: "https://mir-s3-cdn-cf.behance.net/projects/max_808/077718168178365.Y3JvcCw4MDgsNjMyLDAsMA.jpg" },
+      { title: "Resort Horizon Wide Master", category: "lookbook", projectId: "resort-2026", img: "https://mir-s3-cdn-cf.behance.net/b1651c69d4bcf83d40b5f0b8733e53f3/2107101e-ffc9-4a9c-a873-253c81a0b21d_rwc_179x1585x5677x1059x8000.jpg?h=ac0087582e6fafe2bf839a817131ead8" }
+    ];
+
+    function renderPlayground(filter = "all") {
+      playgroundGrid.innerHTML = "";
+      const filtered = filter === "all"
+        ? PLAYGROUND_ITEMS
+        : PLAYGROUND_ITEMS.filter((item) => item.category === filter);
+
+      playgroundCounter.textContent = pad2(filtered.length);
+
+      filtered.forEach((item, i) => {
+        const card = document.createElement("article");
+        card.className = "pg-card";
+        card.innerHTML = `
+          <div class="pg-card-media">
+            <img src="${item.img}" alt="${item.title}" loading="lazy" />
+          </div>
+          <div class="pg-card-meta">
+            <span class="pg-card-title">${item.title}</span>
+            <span class="pg-card-idx">${pad2(i + 1)}</span>
+          </div>
+        `;
+        card.addEventListener("click", () => {
+          openProjectSheet(item.projectId);
+        });
+        playgroundGrid.appendChild(card);
+      });
+    }
+    renderPlayground("all");
+
+    document.querySelectorAll("[data-pg-filter]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll("[data-pg-filter]").forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+        renderPlayground(btn.dataset.pgFilter);
+      });
+    });
+
+    // ===================== 6. PROJECT DETAIL LOOKBOOK SHEET + IPHONE SWIPE DOWN =====================
+    const projectSheetBackdrop = document.getElementById("projectSheetBackdrop");
+    const projectSheet = document.getElementById("projectSheet");
+    const sheetBody = document.getElementById("sheetBody");
+    const sheetStory = document.getElementById("sheetStory");
+    const sheetRole = document.getElementById("sheetRole");
+    const sheetLaunch = document.getElementById("sheetLaunch");
+    const sheetRecognition = document.getElementById("sheetRecognition");
+    const sheetFrames = document.getElementById("sheetFrames");
+    const sheetThumbStrip = document.getElementById("sheetThumbStrip");
+    const sheetGiantTitle = document.getElementById("sheetGiantTitle");
+    const sheetCompareGradeBtn = document.getElementById("sheetCompareGradeBtn");
+
+    function resetSheetTransform() {
+      projectSheet.classList.remove("dragging");
+      projectSheet.style.transform = "";
+      projectSheetBackdrop.style.background = "";
+    }
+
+    function openProjectSheet(projectId) {
+      const proj = PROJECT_BY_ID[projectId] || PROJECTS[0];
+      sheetStory.textContent = proj.story;
+      sheetRole.textContent = proj.role;
+      sheetLaunch.textContent = proj.launch;
+      sheetRecognition.textContent = proj.recognition;
+      sheetGiantTitle.textContent = proj.giantTitle;
+      sheetFrames.classList.remove("raw-mode");
+      sheetCompareGradeBtn.classList.remove("active");
+
+      sheetFrames.innerHTML = "";
+      sheetThumbStrip.innerHTML = "";
+
+      proj.images.forEach((src, i) => {
+        const frameEl = document.createElement("div");
+        frameEl.className = "sheet-frame-card";
+        frameEl.id = `sheetFrame_${i}`;
+        frameEl.innerHTML = `
+          <img src="${src}" alt="${proj.title} Frame ${i + 1}" />
+          <div class="sheet-frame-caption">
+            <span>FRAME ${pad2(i + 1)} / ${pad2(proj.images.length)} · JOLIE ANH STUDIO</span>
+            <span>16-BIT EDITORIAL GRADE</span>
+          </div>
+        `;
+        sheetFrames.appendChild(frameEl);
+
+        const thumbBtn = document.createElement("button");
+        thumbBtn.type = "button";
+        thumbBtn.className = "sheet-thumb-btn" + (i === 0 ? " active" : "");
+        thumbBtn.innerHTML = `<img src="${src}" alt="Jump to frame ${i + 1}" />`;
+        thumbBtn.addEventListener("click", () => {
+          frameEl.scrollIntoView({ behavior: "smooth", block: "start" });
+          sheetThumbStrip.querySelectorAll(".sheet-thumb-btn").forEach((b, idx) => {
+            b.classList.toggle("active", idx === i);
+          });
+        });
+        sheetThumbStrip.appendChild(thumbBtn);
+      });
+
+      // Next Project Bar at bottom of frames
+      const curIdx = PROJECTS.findIndex((p) => p.id === proj.id);
+      const nextProj = PROJECTS[(curIdx + 1) % PROJECTS.length];
+      const nextBar = document.createElement("div");
+      nextBar.className = "sheet-next-project-bar";
+      nextBar.innerHTML = `
+        <span style="font-size: 11.5px; color: var(--muted);">Next Case Study</span>
+        <button type="button" class="sheet-next-btn">→ ${nextProj.shortTitle}</button>
+      `;
+      nextBar.querySelector("button").addEventListener("click", () => {
+        openProjectSheet(nextProj.id);
+      });
+      sheetFrames.appendChild(nextBar);
+
+      resetSheetTransform();
+      sheetBody.scrollTop = 0;
+      document.documentElement.classList.add("sheet-locked");
+      document.body.classList.add("sheet-locked");
+      requestAnimationFrame(() => {
+        projectSheetBackdrop.classList.add("open");
+      });
+    }
+
+    function closeProjectSheet() {
+      resetSheetTransform();
+      projectSheetBackdrop.classList.remove("open");
+      document.documentElement.classList.remove("sheet-locked");
+      document.body.classList.remove("sheet-locked");
+    }
+
+    document.getElementById("sheetBackBtn").addEventListener("click", closeProjectSheet);
+    document.getElementById("sheetCloseBtn").addEventListener("click", closeProjectSheet);
+    sheetCompareGradeBtn.addEventListener("click", () => {
+      sheetFrames.classList.toggle("raw-mode");
+      sheetCompareGradeBtn.classList.toggle("active");
+    });
+
+    document.querySelectorAll("[data-open-sheet]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        openProjectSheet(btn.dataset.openSheet);
+      });
+    });
+
+    // Native iPhone UIKit Pull-Down-to-Close Gesture on Project Sheet
+    function setupSheetPullDownToClose() {
+      let startY = 0;
+      let startX = 0;
+      let currentDY = 0;
+      let startTime = 0;
+      let isPulling = false;
+      let startedOnHeader = false;
+      let touchActive = false;
+      let lastTouchY = 0;
+
+      function onStart(clientY, clientX, target) {
+        if (!projectSheetBackdrop.classList.contains("open")) return;
+        if (target.closest("button") && !target.closest("#sheetDragHandle")) return;
+        touchActive = true;
+        lastTouchY = clientY;
+        startedOnHeader = Boolean(target.closest("#sheetTopbar") || target.closest("#sheetDragHandle"));
+        if (!startedOnHeader && sheetBody.scrollTop > 4) {
+          isPulling = false;
+          return;
+        }
+        startY = clientY;
+        startX = clientX;
+        currentDY = 0;
+        startTime = Date.now();
+        isPulling = true;
+      }
+
+      function onMove(clientY, clientX, event) {
+        const fingerDelta = clientY - lastTouchY;
+
+        if (!isPulling && touchActive && sheetBody.scrollTop <= 0 && fingerDelta > 0) {
+          startY = clientY;
+          startX = clientX;
+          currentDY = 0;
+          startTime = Date.now();
+          isPulling = true;
+        }
+        lastTouchY = clientY;
+
+        if (!isPulling) return;
+        const dy = clientY - startY;
+        const dx = clientX - startX;
+
+        if (dy <= 0 || (!startedOnHeader && Math.abs(dx) > Math.abs(dy))) {
+          if (currentDY > 0) resetSheetTransform();
+          if (dy < -4) isPulling = false;
+          return;
+        }
+
+        if (!startedOnHeader && sheetBody.scrollTop > 2) {
+          isPulling = false;
+          return;
+        }
+
+        if (event && event.cancelable) event.preventDefault();
+        currentDY = dy;
+        projectSheet.classList.add("dragging");
+        projectSheet.style.transform = `translate3d(0, ${dy}px, 0)`;
+        const dim = Math.max(0.08, 0.42 * (1 - Math.min(dy / 380, 0.85)));
+        projectSheetBackdrop.style.background = `rgba(17, 17, 17, ${dim})`;
+      }
+
+      function onEnd() {
+        touchActive = false;
+        if (!isPulling) return;
+        isPulling = false;
+        const elapsed = Math.max(1, Date.now() - startTime);
+        const velocityY = currentDY / elapsed;
+
+        if (currentDY > 60 || (currentDY > 22 && velocityY > 0.32)) {
+          closeProjectSheet();
+        } else if (currentDY > 0) {
+          resetSheetTransform();
+        }
+        currentDY = 0;
+      }
+
+      projectSheet.addEventListener("touchstart", (e) => {
+        if (e.touches.length !== 1) return;
+        onStart(e.touches[0].clientY, e.touches[0].clientX, e.target);
+      }, { passive: true });
+
+      projectSheet.addEventListener("touchmove", (e) => {
+        if (e.touches.length !== 1) return;
+        onMove(e.touches[0].clientY, e.touches[0].clientX, e);
+      }, { passive: false });
+
+      projectSheet.addEventListener("touchend", onEnd, { passive: true });
+      projectSheet.addEventListener("touchcancel", onEnd, { passive: true });
+    }
+    setupSheetPullDownToClose();
+
+    // Keyboard Escape & Arrow Navigation
+    window.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        closeProjectSheet();
+        contactOverlay.classList.remove("open");
+        processModal.classList.remove("open");
+      } else if (e.key === "ArrowDown" && views.work.classList.contains("active") && !projectSheetBackdrop.classList.contains("open")) {
+        targetWheelIndex += 1;
+      } else if (e.key === "ArrowUp" && views.work.classList.contains("active") && !projectSheetBackdrop.classList.contains("open")) {
+        targetWheelIndex -= 1;
+      }
+    });
+  </script>
+</body>
+</html>
