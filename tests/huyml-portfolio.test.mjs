@@ -118,4 +118,38 @@ describe("Jolie Anh Portfolio — huyml.co Style", () => {
     expect(html).toContain("brightness(");
     expect(html).toContain("contrast(");
   });
+
+  test("animates anime pusher with slow, heavy physical walk cadence and labored heave", () => {
+    const html = readFileSync(htmlPath, "utf8");
+
+    // Slow heavy walk cadence: 400ms static friction, 280ms sustained push
+    expect(html).toContain("p < 0.22 ? 400 : (p < 0.85 ? 280 : 210)");
+    expect(html).toContain("Math.sin(elapsed / 185)");
+  });
+
+  test("restricts card scrolling strictly one card at a time with debounced wheel lock and clamped touch drag", () => {
+    const html = readFileSync(htmlPath, "utf8");
+
+    // Desktop wheel locked debounce (blocks trailing trackpad momentum events)
+    expect(html).toContain("isWheelLocked");
+    expect(html).toContain("wheelUnlockTimer");
+
+    // Touch & pointer single-card snap (clamped deflection + strict +/- 1 card advance)
+    expect(html).toContain("dragStartWheelIndex");
+    expect(html).toContain("Math.max(-0.65, Math.min(0.65, -totalDY / 320))");
+  });
+
+  test("supports swipe-right sheet dismissal with history pushState/popstate guard to return to scrolling screen without 2-back", () => {
+    const html = readFileSync(htmlPath, "utf8");
+
+    // History state guard preventing 2-back
+    expect(html).toContain('history.pushState({ modal: "project-sheet"');
+    expect(html).toContain('addEventListener("popstate"');
+    expect(html).toContain("closeProjectSheet(false)");
+
+    // Horizontal swipe-right gesture detection on sheet
+    expect(html).toContain("isSwipingRight");
+    expect(html).toContain("translate3d");
+  });
 });
+
