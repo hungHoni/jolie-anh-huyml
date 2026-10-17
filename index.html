@@ -188,8 +188,8 @@
       transform: translate(-98%, -50%);
       z-index: 3;
       pointer-events: none;
-      width: clamp(240px, 48vw, 340px);
-      height: auto;
+      width: clamp(260px, 50vw, 380px);
+      height: clamp(260px, 50vw, 380px);
       will-change: left, transform;
       display: flex;
       align-items: center;
@@ -198,7 +198,8 @@
 
     .intro-anime-char {
       width: 100%;
-      height: auto;
+      height: 100%;
+      object-fit: contain;
       display: block;
       filter: drop-shadow(0 18px 36px rgba(0, 0, 0, 0.28));
       will-change: transform;
@@ -1943,7 +1944,8 @@
     <div class="intro-black-curtain" id="introCurtain"></div>
     <!-- assets/push-lottie.json preserved for legacy fallback -->
     <div class="intro-pusher-wrap" id="introPusher">
-      <img class="intro-anime-char" id="introAnimeChar" src="assets/jolie-anime-pusher.png" alt="Jolie Anh" />
+      <!-- assets/jolie-anime-pusher.png preserved for character reference -->
+      <img class="intro-anime-char" id="introAnimeChar" src="assets/jolie-push-frame-0.png" alt="Jolie Anh" />
     </div>
     <button class="intro-skip-btn" id="introSkipBtn" type="button">Skip ✕</button>
   </div>
@@ -2563,10 +2565,25 @@
       if (e.target !== introSkipBtn) dismissIntro();
     });
 
+    const PUSH_FRAMES = [
+      "assets/jolie-push-frame-0.png",
+      "assets/jolie-push-frame-1.png",
+      "assets/jolie-push-frame-2.png",
+      "assets/jolie-push-frame-3.png"
+    ];
+    PUSH_FRAMES.forEach(src => {
+      const img = new Image();
+      img.src = src;
+    });
+
+    let currentFrameIdx = 0;
+    let lastFrameTime = 0;
+
     if (window.location.search.includes("nosplash=1")) {
       dismissIntro();
     } else {
       const startTime = performance.now();
+      lastFrameTime = startTime;
       // Slow heavy push duration: 4100ms
       const duration = 4100;
 
@@ -2599,15 +2616,29 @@
         introCurtain.style.left = leftPercent + "%";
         introPusher.style.left = leftPercent + "%";
 
-        // Dynamic physical breathing/heave of anime character during strained push
+        // Dynamic Walking/Pushing Step Cadence:
+        // Legs take physical stepping strides (Frame 0 -> 1 -> 2 -> 3 loop)
         if (introAnimeChar) {
           if (p < 0.98) {
-            const exertionCycle = Math.sin(elapsed / 120);
-            const heaveY = exertionCycle * 2.8;
-            const heaveRot = Math.sin(elapsed / 160) * 1.2;
-            introAnimeChar.style.transform = `translate3d(0, ${heaveY.toFixed(2)}px, 0) rotate(${heaveRot.toFixed(2)}deg)`;
+            // Adaptive step timing: slow heavy steps during friction (200ms) -> fluid stepping (130ms) -> acceleration (95ms)
+            const stepInterval = p < 0.22 ? 200 : (p < 0.85 ? 130 : 95);
+            if (now - lastFrameTime > stepInterval) {
+              currentFrameIdx = (currentFrameIdx + 1) % PUSH_FRAMES.length;
+              introAnimeChar.src = PUSH_FRAMES[currentFrameIdx];
+              lastFrameTime = now;
+            }
+
+            // Exertion stride heave
+            const exertionCycle = Math.sin(elapsed / 110);
+            const heaveY = exertionCycle * 2.2;
+            introAnimeChar.style.transform = `translate3d(0, ${heaveY.toFixed(2)}px, 0)`;
           } else {
-            introAnimeChar.style.transform = "translate3d(0, 0, 0) rotate(0deg)";
+            // Unveiled completely: settle firmly on planted contact pose
+            if (currentFrameIdx !== 0) {
+              currentFrameIdx = 0;
+              introAnimeChar.src = PUSH_FRAMES[0];
+            }
+            introAnimeChar.style.transform = "translate3d(0, 0, 0)";
           }
         }
 

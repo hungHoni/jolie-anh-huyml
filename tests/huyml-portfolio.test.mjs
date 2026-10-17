@@ -94,7 +94,8 @@ describe("Jolie Anh Portfolio — huyml.co Style", () => {
     expect(html).toContain('id="introCurtain"');
     expect(html).toContain('id="introPusher"');
     expect(html).toContain('id="introAnimeChar"');
-    expect(html).toContain("assets/jolie-anime-pusher.png");
+    expect(html).toContain("PUSH_FRAMES");
+    expect(html).toContain("assets/jolie-push-frame-0.png");
     expect(html).toContain("heavyPushEase");
 
     // Native mobile header & drawer (no clunky pill row)
