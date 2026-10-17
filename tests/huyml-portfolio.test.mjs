@@ -85,4 +85,18 @@ describe("Jolie Anh Portfolio — huyml.co Style", () => {
     expect(html).toContain("translate3d");
     expect(html).toContain("setupSheetPullDownToClose");
   });
+
+  test("includes huyml-style character curtain-push intro animation and native mobile drawer", () => {
+    const html = readFileSync(htmlPath, "utf8");
+
+    // Intro animation elements & Lottie pusher
+    expect(html).toContain('id="introOverlay"');
+    expect(html).toContain('id="introCurtain"');
+    expect(html).toContain('id="introPusher"');
+    expect(html).toContain("push-lottie.json");
+
+    // Native mobile header & drawer (no clunky pill row)
+    expect(html).toContain('id="mobileMenuBtn"');
+    expect(html).toContain('id="mobileMenuDrawer"');
+  });
 });
