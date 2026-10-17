@@ -89,14 +89,32 @@ describe("Jolie Anh Portfolio — huyml.co Style", () => {
   test("includes huyml-style character curtain-push intro animation and native mobile drawer", () => {
     const html = readFileSync(htmlPath, "utf8");
 
-    // Intro animation elements & Lottie pusher
+    // Intro animation elements & anime pusher created from Jolie Anh's portrait
     expect(html).toContain('id="introOverlay"');
     expect(html).toContain('id="introCurtain"');
     expect(html).toContain('id="introPusher"');
-    expect(html).toContain("push-lottie.json");
+    expect(html).toContain('id="introAnimeChar"');
+    expect(html).toContain("assets/jolie-anime-pusher.png");
+    expect(html).toContain("heavyPushEase");
 
     // Native mobile header & drawer (no clunky pill row)
     expect(html).toContain('id="mobileMenuBtn"');
     expect(html).toContain('id="mobileMenuDrawer"');
+  });
+
+  test("uses widescreen 16:9 horizontal rectangle cards with pure vertical cylinder 3D curvature and no badge overlays", () => {
+    const html = readFileSync(htmlPath, "utf8");
+
+    // Widescreen 16:9 rectangle geometry
+    expect(html).toContain("clamp(480px, 46vw, 620px)");
+    expect(html).toContain("clamp(270px, 25.875vw, 348.75px)");
+
+    // Clean unadorned cards without overlay badge pill
+    expect(html).not.toContain("wheel-card-badge");
+
+    // Pure vertical cylinder (Three.js style: rotateX with depth shading, zero diagonal skew)
+    expect(html).toContain("rotateX(");
+    expect(html).toContain("brightness(");
+    expect(html).toContain("contrast(");
   });
 });
